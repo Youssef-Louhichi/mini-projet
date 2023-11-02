@@ -1,0 +1,14 @@
+<a routerLink="/home">home</a>
+<div class="container">
+        <strong>Authentification</strong>
+            <div class="mb-3 mt-3">
+              <label  class="form-label">Nom d'utilisateur:</label>
+              <input type="text" class="form-control" placeholder="Introduisez votre nom d'utilisateur" #u>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Password:</label>
+              <input type="password" class="form-control" placeholder="Introduisez votre mot de passe " #p>
+            </div>
+            <button type="button" class="btn btn-primary" (click)="onLogin(u.value,p.value)">S'authentifier</button>
+       
+    </div>
