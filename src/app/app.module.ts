@@ -15,6 +15,9 @@ import { ChangerPWDComponent } from './composants/backOffice/changer-pwd/changer
 import { DashAdminComponent } from './composants/backOffice/dash-admin/dash-admin.component';
 import { DashComponent } from './composants/fontOffice/dash/dash.component';
 import { ErreurComponent } from './composants/erreur/erreur.component';
+import { ModifierComponent } from './composants/backOffice/modifier/modifier.component';
+import { AjouterComponent } from './composants/backOffice/ajouter/ajouter.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,11 +33,14 @@ import { ErreurComponent } from './composants/erreur/erreur.component';
     ChangerPWDComponent,
     DashAdminComponent,
     DashComponent,
-    ErreurComponent
+    ErreurComponent,
+    ModifierComponent,
+    AjouterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

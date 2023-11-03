@@ -12,6 +12,8 @@ import { ChangerPWDComponent } from './composants/backOffice/changer-pwd/changer
 import { ErreurComponent } from './composants/erreur/erreur.component';
 import { AdminMenuComponent } from './composants/backOffice/admin-menu/admin-menu.component';
 import { adminGuard } from './guards/admin.guard';
+import { ModifierComponent } from './composants/backOffice/modifier/modifier.component';
+import { AjouterComponent } from './composants/backOffice/ajouter/ajouter.component';
 
 const routes: Routes = [
 
@@ -30,6 +32,8 @@ const routes: Routes = [
 [{path:"menu",title:"Welcome Admin",component:AdminMenuComponent},
   {path:"acts",title:"List Activity",component:ListAcitiviteAdminComponent},
 {path:"pwd",title:"Changer Mot de passe", component:ChangerPWDComponent},
+{path:"modifier/:id",title:"Modifier Act", component:ModifierComponent},
+{path:"ajouter",title:"Ajouter Act", component:AjouterComponent},
 {path:"",redirectTo:"menu",pathMatch:"full"}
 ]
 },

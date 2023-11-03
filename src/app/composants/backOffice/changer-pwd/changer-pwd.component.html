@@ -1,2 +1,11 @@
 <a routerLink="/admin/menu">retour</a>
-<p>changer-pwd works!</p>
+<table>
+    <tbody><tr><td>Ancien mot de passe </td><td><input type="text" #pwd1></td>
+    </tr>
+    <tr><td>nouveau mot de passe</td><td><input type="password" #pwd2></td>
+    </tr>
+    <tr><td>confirmer nouveau mot de passe</td><td><input type="password" #pwd3></td>
+    </tr>
+</tbody>
+</table>
+<button (click)="onChange(pwd1.value,pwd2.value,pwd3.value)">changer</button>

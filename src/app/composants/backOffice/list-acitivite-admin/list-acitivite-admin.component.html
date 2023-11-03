@@ -1,2 +1,31 @@
 <a routerLink="/admin/menu">retour</a>
-<p>list-acitivite-admin works!</p>
+<div class="container mt-3">
+    <button (click)="goAjouter()">Ajouter</button>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>infos</th>
+                <th>Title</th>
+                <th>infos</th>
+                <th>Title</th>
+                <th>infos</th>
+                <th>Title</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr *ngFor="let a of activities,index as i">
+                <td>{{a.id}}</td>
+                <td>{{a.int}}</td>
+                <td>{{a.photo}}</td>
+                <td>{{a.Date_pub}}</td>
+                <td>{{a.categorie}}</td>
+                <td>{{a.lieu}}</td>
+                <td><a [routerLink]="['/admin/modifier',a.id]">Modifier</a></td>
+                <td><button (click)="supprimer(i)">X</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

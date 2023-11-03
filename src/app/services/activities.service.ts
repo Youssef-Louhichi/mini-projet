@@ -15,4 +15,9 @@ export class ActivitiesService {
     new Activity(4,"fdhqj","qjfel","fjkqel","fqeh;","jehfjke"),
     new Activity(4,"fdhqj","qjfel","fjkqel","fqeh;","jehfjke")
   ]
+
+  public getActs(){
+    return this.lesactivitees;
+  }
+
 }

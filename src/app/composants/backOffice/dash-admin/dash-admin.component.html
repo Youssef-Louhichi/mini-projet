@@ -1,6 +1,20 @@
 
-    <img src="assets/banniere.png" alt="banniere ISET">
-    <button type="button" class="btn btn-primary" (click)="logout()">Deconnexion</button>
+<img src="assets/banniere.png" alt="banniere ISET">
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+    
+
+        <a class="nav-link"  routerLink="/login">retour</a>
+        </li>
+        </ul>
+
+    <button type="button" class="btn btn-primary"  (click)="logout()">Deconnexion</button>
+    </div>
+    </div>
+    </nav>
         
 
 <router-outlet></router-outlet>
