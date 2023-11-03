@@ -1,10 +1,10 @@
-<input type="number" #id><br>
-<input type="text" #int><br>
-<input type="text" #ph><br>
-<input type="date" #date><br>
-<select #cat>
+Id:<input type="number" #id><br>
+Intulité:<input type="text" #int><br>
+photo:<input type="text" #ph><br>
+Date:<input type="date" #date><br>
+categorie:<select #cat>
     <option value="formation" selected>Formation</option>
     <option value="event">Evennement</option>
     <option value="sortie">Sortie</option>
-<input type="text"  #lieu><br>
+Lieu:<input type="text"  #lieu><br>
 <button (click)="onAjoute(id.value,int.value,ph.value,date.value,cat.value,lieu.value)">ajouter</button>
