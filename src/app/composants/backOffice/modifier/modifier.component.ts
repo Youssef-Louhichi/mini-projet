@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Activity } from 'src/app/classes/activity';
 import { ActivitiesService } from 'src/app/services/activities.service';
 
@@ -9,17 +9,27 @@ import { ActivitiesService } from 'src/app/services/activities.service';
   styleUrls: ['./modifier.component.css']
 })
 export class ModifierComponent implements OnInit{
-  constructor(private activities:ActivitiesService,private activatedRoute:ActivatedRoute){}
+  constructor(private service:ActivitiesService,private activatedRoute:ActivatedRoute,
+    private route:Router){}
   lesactivities:Activity[]=[];
 
 
   act:Activity;
-  id:number;
+  idInit:number;
   ngOnInit(): void {
     
-    this.lesactivities=this.activities.getActs();
-    this.id= this.activatedRoute.snapshot.params['id'];
-    this.act=this.lesactivities.find(e => e.id==this.id)
+    this.lesactivities=this.service.getActs();
+    this.idInit= this.activatedRoute.snapshot.params['id'];
+    this.act=this.lesactivities.find(e => e.id==this.idInit)
     
+  }
+
+  modifier(id:string,int:string,ph:string,date:string,cat:string,lieu:string){
+    this.service.modifierService(this.idInit,id,int,ph,date,cat,lieu)
+    this.route.navigate(['/admin/acts'])
+  }
+
+  Annuler(){
+    this.route.navigate(['/admin/acts'])
   }
 }

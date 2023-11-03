@@ -1,5 +1,9 @@
-<input type="number" [(ngModel)]="act.id" ><br>
-<input type="text" [(ngModel)]="act.int" ><br>
-<input type="text" [(ngModel)]="act.Date_pub" ><br>
-<input type="text" [(ngModel)]="act.categorie" ><br>
-<input type="text" [(ngModel)]="act.lieu" ><br>
+<input type="number" [value]="act.id" #id ><br>
+<input type="text" [value]="act.int" #int><br>
+<input type="text" [value]="act.photo" #ph><br>
+<input type="date" [value]="act.date_act" #date><br>
+<input type="text" [value]="act.categorie" #cat><br>
+<input type="text" [value]="act.lieu" #lieu><br>
+
+<button (click)="modifier(id.value,int.value,ph.value,date.value,cat.value,lieu.value)">Confirmer modification</button>
+<button (click)="Annuler()">Annuler</button>

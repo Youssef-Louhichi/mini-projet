@@ -11,14 +11,14 @@ import { ActivitiesService } from 'src/app/services/activities.service';
 export class AjouterComponent {
 
 
-  constructor(private act:ActivitiesService,private route:Router){}
+  constructor(private service:ActivitiesService,private route:Router){}
 
   lesactivites:Activity[];
   newAct:Activity;
   onAjoute(id:string,int:string,ph:string,date:string,cat:string,lieu:string){
-    this.lesactivites=this.act.getActs();
-    this.newAct=new Activity(Number(id),int,ph,date,cat,lieu)
-    this.lesactivites.push(this.newAct)
+    this.lesactivites=this.service.getActs();
+    this.newAct=new Activity(Number(id),int,ph,new Date(date),cat,lieu)
+    this.service.ajouter(this.newAct)
     this.route.navigate(['/admin/acts'])
   }
 }

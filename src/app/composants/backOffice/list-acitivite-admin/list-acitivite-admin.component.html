@@ -1,6 +1,14 @@
 <a routerLink="/admin/menu">retour</a>
 <div class="container mt-3">
     <button (click)="goAjouter()">Ajouter</button>
+    
+    <input type="number" (change)="find(id.value)" #id/>
+>    <select (change)="filtre1(cat.value)" #cat>
+    <option value="formation">Formation</option>
+    <option value="event">Evennement</option>
+    <option value="sortie">Sortie</option>
+    <option value="" selected>tout</option>
+</select>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -16,15 +24,15 @@
         </thead>
         <tbody>
 
-            <tr *ngFor="let a of activities,index as i">
+            <tr *ngFor="let a of activitiesAfficher">
                 <td>{{a.id}}</td>
                 <td>{{a.int}}</td>
                 <td>{{a.photo}}</td>
-                <td>{{a.Date_pub}}</td>
+                <td>{{a.date_act | date:"dd/MM/yyyy"}}</td>
                 <td>{{a.categorie}}</td>
                 <td>{{a.lieu}}</td>
                 <td><a [routerLink]="['/admin/modifier',a.id]">Modifier</a></td>
-                <td><button (click)="supprimer(i)">X</button></td>
+                <td><button (click)="supprimer(a.id)">X</button></td>
             </tr>
         </tbody>
     </table>
