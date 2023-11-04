@@ -1,1 +1,35 @@
-<p>liste-activite works!</p>
+
+<div class="container mt-3">
+<select (change)="filtre1(cat.value)" #cat>
+    <option value="formation">Formation</option>
+    <option value="event">Evennement</option>
+    <option value="sortie">Sortie</option>
+    <option value="" selected>tout</option>
+</select>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Intulité</th>
+                <th>photo</th>
+                <th>date</th>
+                <th>categorie</th>
+                <th>lieu</th>
+              
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr *ngFor="let a of activitiesAfficher">
+                <td>{{a.id}}</td>
+                <td>{{a.int}}</td>
+                <td>{{a.photo}}</td>
+                <td>{{a.date_act | date:"dd/MM/yyyy"}}</td>
+                <td>{{a.categorie}}</td>
+                <td>{{a.lieu}}</td>
+                <td><a [routerLink]="['/admin/modifier',a.id]">Modifier</a></td>
+              
+            </tr>
+        </tbody>
+    </table>
+</div>
