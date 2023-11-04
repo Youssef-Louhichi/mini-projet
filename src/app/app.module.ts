@@ -35,7 +35,7 @@ import { FormsModule } from '@angular/forms';
     DashComponent,
     ErreurComponent,
     ModifierComponent,
-    AjouterComponent
+    AjouterComponent,
   ],
   imports: [
     BrowserModule,

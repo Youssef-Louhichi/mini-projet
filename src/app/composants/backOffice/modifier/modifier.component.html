@@ -2,7 +2,11 @@ Id<input type="number" [value]="act.id" #id ><br>
 Intulité<input type="text" [value]="act.int" #int><br>
 photo<input type="text" [value]="act.photo" #ph><br>
 date:<input type="date" [value]="act.date_act" #date><br>
-categorie:<input type="text" [value]="act.categorie" #cat><br>
+categorie:<select #cat>
+    <option value="formation" selected>Formation</option>
+    <option value="event">Evennement</option>
+    <option value="sortie">Sortie</option>
+    </select><br>
 lieu:<input type="text" [value]="act.lieu" #lieu><br>
 
 <button (click)="modifier(id.value,int.value,ph.value,date.value,cat.value,lieu.value)">Confirmer modification</button>

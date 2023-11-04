@@ -13,8 +13,12 @@ export class MenuComponent {
 
   goLogin() {
 
-     
+     if(localStorage.getItem('state')=="connected"){
+      this.router.navigate(['/admin/menu'])
+     }
+     else{
     this.router.navigate(['/login'])
+     }
   }
 
 
