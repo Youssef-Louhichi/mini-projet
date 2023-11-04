@@ -6,30 +6,12 @@
     <option value="sortie">Sortie</option>
     <option value="" selected>tout</option>
 </select>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Intulité</th>
-                <th>photo</th>
-                <th>date</th>
-                <th>categorie</th>
-                <th>lieu</th>
+    <ul>
+            <li *ngFor="let a of activitiesAfficher">
+              <app-listenfant [li]="a"></app-listenfant>
               
-            </tr>
-        </thead>
-        <tbody>
+            </li>
+        </ul>
 
-            <tr *ngFor="let a of activitiesAfficher">
-                <td>{{a.id}}</td>
-                <td>{{a.int}}</td>
-                <td>{{a.photo}}</td>
-                <td>{{a.date_act | date:"dd/MM/yyyy"}}</td>
-                <td>{{a.categorie}}</td>
-                <td>{{a.lieu}}</td>
-                <td><a [routerLink]="['/admin/modifier',a.id]">Modifier</a></td>
-              
-            </tr>
-        </tbody>
-    </table>
+        
 </div>

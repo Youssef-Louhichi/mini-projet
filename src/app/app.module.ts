@@ -18,6 +18,7 @@ import { ErreurComponent } from './composants/erreur/erreur.component';
 import { ModifierComponent } from './composants/backOffice/modifier/modifier.component';
 import { AjouterComponent } from './composants/backOffice/ajouter/ajouter.component';
 import { FormsModule } from '@angular/forms';
+import { ListenfantComponent } from './composants/fontOffice/listenfant/listenfant.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { FormsModule } from '@angular/forms';
     ErreurComponent,
     ModifierComponent,
     AjouterComponent,
+    ListenfantComponent,
   ],
   imports: [
     BrowserModule,
