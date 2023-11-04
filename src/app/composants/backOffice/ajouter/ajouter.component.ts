@@ -15,8 +15,13 @@ export class AjouterComponent {
 
   lesactivites:Activity[];
   newAct:Activity;
+
+  
   onAjoute(id:string,int:string,ph:string,date:string,cat:string,lieu:string){
     this.lesactivites=this.service.getActs();
+
+    ph="assets\\"+ph.split("\\")[2]
+   
     this.newAct=new Activity(Number(id),int,ph,new Date(date),cat,lieu)
     this.service.ajouter(this.newAct)
     this.route.navigate(['/admin/acts'])

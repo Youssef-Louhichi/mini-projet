@@ -1,9 +1,9 @@
-<a routerLink="/admin/menu">retour</a>
+<a routerLink="/admin/menu" > <i class="fa-solid fa-arrow-left"></i> Retour</a>
 <div class="container mt-3">
     <button (click)="goAjouter()">Ajouter</button>
     
-    <input type="number" (change)="find(id.value)" #id/>
->    <select (change)="filtre1(cat.value)" #cat>
+    Identifiant de l'activitées:<input type="number" (change)="find(id.value)" #id/>
+    Categorie:<select (change)="filtre1(cat.value)" #cat>
     <option value="formation">Formation</option>
     <option value="event">Evennement</option>
     <option value="sortie">Sortie</option>
