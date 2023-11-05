@@ -1,4 +1,5 @@
-<a routerLink="/admin/menu" class="btn btn-light"> <i class="fa-solid fa-arrow-left fa-xl"></i> </a>
+<a routerLink="/admin/menu" class="btn btn-light"> <i class="fa-solid fa-arrow-left fa-xl"></i><div><i class="fa-solid fa-user"></i> {{user | titlecase}}</div>
+</a>
 <div class="container mt-3">
     <div style="display: flex;justify-content: space-between;">
         <label>Identifiant de l'activitée:<input type="number" (change)="find(id.value)" class="form-control"
@@ -33,17 +34,17 @@
         <tbody>
 
             <tr *ngFor="let a of activitiesAfficher">
-                <td><img [src]="a.photo"></td>
+                <td><img [src]="a.photo" style="height: 40px;width: 40px;"></td>
                 <td>{{a.id}}</td>
                 <td>{{a.int}}</td>
                 <td>{{a.date_act | date:"dd/MM/yyyy"}}</td>
                 <td>{{a.categorie}}</td>
                 <td>{{a.lieu}}</td>
                 <td><ng-container *ngFor="let r of a.responsables">
-                    {{r.nom }}
+                    {{r.nom }}<br>
                 </ng-container></td>
-                <td>{{a.prix}}</td>
-                <td><span *ngIf="a.limite" >Oui</span><span *ngIf="!a.limite" >Non</span></td>
+                <td><span *ngIf="a.prix != 0 ; else gratuit" >{{a.prix}}DT</span><ng-template #gratuit>Gratuit</ng-template></td>
+                <td><span *ngIf="a.limite;else non" >Oui</span><ng-template #non>Non</ng-template></td>
                 <td><a [routerLink]="['/admin/modifier',a.id]" class="btn btn-info">Modifier</a></td>
                 <td><button (click)="supprimer(a.id)" class="btn btn-danger">X</button></td>
             </tr>

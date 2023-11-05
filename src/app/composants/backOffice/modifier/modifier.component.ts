@@ -24,7 +24,25 @@ export class ModifierComponent implements OnInit{
     
   }
 
+  test(id:string,int:string,date:string,lieu:string){
+    if(id=="" || int=="" || date=="" || lieu==""){
+      document.getElementById("butt").setAttribute("disabled","true")
+    }
+    else{      
+      document.getElementById("butt").removeAttribute("disabled")
+  }
+  }
+    
+  
+
   modifier(id:string,int:string,ph:string,date:string,cat:string,lieu:string,prix:string,ch:boolean){
+    
+    if(ph==""){
+      ph="assets/activity.png"
+    }
+    else{     
+       ph="assets\\"+ph.split("\\")[2];
+    }
     this.service.modifierService(this.idInit,id,int,ph,date,cat,lieu,prix,ch)
     this.route.navigate(['/admin/acts'])
   }

@@ -9,8 +9,9 @@ export class AuthService {
 
   state:string="";
   pwdAdmin:string="youssef"
+  userAdmin:string="youssef"
   public login(username:string,pwd:string){
-    if(username=="youssef" && pwd==this.pwdAdmin){
+    if(username==this.userAdmin && pwd==this.pwdAdmin){
       localStorage.setItem('state','connected')
       return true;
     }
@@ -18,6 +19,10 @@ export class AuthService {
       localStorage.setItem('state','disconnected')
       return false;
     }
+  }
+
+  public getUser(){
+    return this.userAdmin;
   }
 
   public logout(){

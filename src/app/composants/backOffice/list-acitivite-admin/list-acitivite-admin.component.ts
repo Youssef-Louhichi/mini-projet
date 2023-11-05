@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Activity } from 'src/app/classes/activity';
 import { ActivitiesService } from 'src/app/services/activities.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-list-acitivite-admin',
@@ -10,9 +11,11 @@ import { ActivitiesService } from 'src/app/services/activities.service';
   styleUrls: ['./list-acitivite-admin.component.css']
 })
 export class ListAcitiviteAdminComponent implements OnInit {
-  constructor(private service: ActivitiesService, private route: Router) { }
+  constructor(private service: ActivitiesService, private route: Router,private serviceAuth:AuthService) { }
   activities: Activity[];
   activitiesAfficher: Activity[];
+  user:string=this.serviceAuth.getUser();
+
 
   ngOnInit(): void {
     this.activities = this.service.getActs();

@@ -11,6 +11,9 @@ export class ChangerPWDComponent {
 
   constructor(private auth:AuthService,private route:Router){}
 
+  user:string=this.auth.getUser();
+
+
   onChange(pwd1:string,pwd2:string,pwd3:string){
     if(this.auth.changer(pwd1,pwd2) && pwd2==pwd3){
       alert("mot de passe changer avec succes!")

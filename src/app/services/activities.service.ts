@@ -1,40 +1,23 @@
 import { Injectable } from '@angular/core';
 import { Activity } from '../classes/activity';
 import { MembreResponsable } from '../classes/membre-responsable';
+import { MembersService } from './members.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ActivitiesService {
 
-  constructor() { }
+  constructor(private resService:MembersService) { }
+
+  lesresponables:MembreResponsable[]=this.resService.getMembers();
 
   lesactivitees:Activity[]=[
-    new Activity(4,"fdhqj","qjfel",new Date(2023,12,10),"formation","jehfjke", [
-      new MembreResponsable("Youssef","ben Farah","12345678"),
-      new MembreResponsable("Youssef","Louhichi","21287173"),
-      new MembreResponsable("Aziz","ben Mimoun","12345678")
-    ],10,true),
-    new Activity(7,"fdhqj","qjfel",new Date(2023,12,23),"event","jehfjke", [
-      new MembreResponsable("Youssef","ben Farah","12345678"),
-      new MembreResponsable("Youssef","Louhichi","21287173"),
-      new MembreResponsable("Aziz","ben Mimoun","12345678")
-    ],15,true),
-    new Activity(9,"fdhqj","qjfel",new Date(2023,12,15),"event","jehfjke", [
-      new MembreResponsable("Youssef","ben Farah","12345678"),
-      new MembreResponsable("Youssef","Louhichi","21287173"),
-      new MembreResponsable("Aziz","ben Mimoun","12345678")
-    ],0,true),
-    new Activity(1,"fdhqj","qjfel",new Date(2023,12,30),"formation","jehfjke", [
-      new MembreResponsable("Youssef","ben Farah","12345678"),
-      new MembreResponsable("Youssef","Louhichi","21287173"),
-      new MembreResponsable("Aziz","ben Mimoun","12345678")
-    ],20,false),
-    new Activity(14,"fdhqj","qjfel",new Date(2023,12,1),"formation","jehfjke", [
-      new MembreResponsable("Youssef","ben Farah","12345678"),
-      new MembreResponsable("Youssef","Louhichi","21287173"),
-      new MembreResponsable("Aziz","ben Mimoun","12345678")
-    ],0,false)
+    new Activity(4,"Formation Montage","assets/activity.png",new Date(2023,12,10),"formation","jehfjke", this.lesresponables,10,true),
+    new Activity(7,"Special Guest","assets/activity.png",new Date(2023,12,23),"event","jehfjke", this.lesresponables,15,true),
+    new Activity(9,"Iset Cinema","assets/activity.png",new Date(2023,12,15),"event","jehfjke",this.lesresponables,0,true),
+    new Activity(1,"Formation Realisation","assets/activity.png",new Date(2023,12,30),"formation","jehfjke", [],20,false),
+    new Activity(14,"Formation plot-writing","assets/activity.png",new Date(2023,12,1),"formation","jehfjke", [],0,false)
   ]
 
   public getActs(){
@@ -67,6 +50,7 @@ export class ActivitiesService {
         this.indice=this.i;
      break;
     }
+
   
   }
     this.lesactivitees[this.i].id=Number(id);
@@ -77,6 +61,8 @@ export class ActivitiesService {
     this.lesactivitees[this.i].lieu=lieu;
     this.lesactivitees[this.i].prix=Number(prix);
     this.lesactivitees[this.i].limite=lim;
+    if(lim){this.lesactivitees[this.i].responsables=this.lesresponables}
+    else{this.lesactivitees[this.i].responsables=[];}
 
   }
 

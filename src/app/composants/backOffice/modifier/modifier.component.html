@@ -1,47 +1,83 @@
 <a routerLink="/admin/acts" class="btn btn-light"> <i class="fa-solid fa-arrow-left fa-xl"></i> </a>
 <div class="container">
     <h1><strong>Modifier Activitée</strong></h1>
-    <div class="mb-3 mt-3">
-        <label class="form-label">ID:</label>
-        <input type="number" class="form-control" [value]="act.id" #id>
-    </div>
-    <div class="mb-3 mt-3">
-        <label class="form-label">Intulité:</label>
-        <input type="text" class="form-control" [value]="act.int" #int>
-    </div>
-    <div class="mb-3 mt-3">
-        <label class="form-label">photo:</label>
-        <input type="file" class="form-control" [value]="act.photo" #ph>
-    </div>
-    <div class="mb-3 mt-3">
-        <label class="form-label">Date:</label>
-        <input type="date" class="form-control" [value]="act.date_act" #date>
-    </div>
-    <div class="mb-3 mt-3">
-        <label class="form-label">categorie:</label>
-        <select class="form-control" [value]="act.categorie" #cat>
-            <option value="formation">Formation</option>
-            <option value="event">Evennement</option>
-            <option value="sortie">Sortie</option>
-        </select>
-    </div>
-    <div class="mb-3 mt-3">
-        <label class="form-label">Lieu:</label>
-        <input type="text" class="form-control" [value]="act.lieu" #lieu>
-    </div>
+    <table class="table table-striped">
+        <tr>
+            <td>
+                <div class="mb-3 mt-3">
+                    <label>ID:</label>
+                    <input type="number" class="form-control form-control-sm" [value]="act.id"
+                        (change)="test(id.value,int.value,date.value,lieu.value)" #id>
+                </div>
+            </td>
+            <td>
+                <div class="mb-3 mt-3">
+                    <label>Intulité:</label>
+                    <input type="text" class="form-control form-control-sm" [value]="act.int"
+                        (change)="test(id.value,int.value,date.value,lieu.value)" #int>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="mb-3 mt-3">
+                    <label>photo:</label>
+                    <input type="file" class="form-control form-control-sm" #ph>
+                </div>
+            </td>
+            <td>
+                <div class="mb-3 mt-3">
+                    <label>Date:</label>
+                    <input type="date" class="form-control" [value]="act.date_act | date:'yyyy-MM-dd'"
+                        (change)="test(id.value,int.value,date.value,lieu.value)" #date>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="mb-3 mt-3">
+                    <label>categorie:</label>
+                    <select class="form-control form-control-sm" [value]="act.categorie" #cat>
+                        <option value="formation">Formation</option>
+                        <option value="event">Evennement</option>
+                        <option value="sortie">Sortie</option>
+                    </select>
+                </div>
+            </td>
+            <td>
+                <div class="mb-3 mt-3">
+                    <label>Lieu:</label>
+                    <input type="text" class="form-control form-control-sm" [value]="act.lieu"
+                        (change)="test(id.value,int.value,date.value,lieu.value)" #lieu>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
 
-    <div class="mb-3 mt-3">
-        <label class="form-label">les places sont Limitées  </label>
-        <input type="radio" name="places"  #ch>Oui
-        <input type="radio" name="places" >Non
-    </div>
+                <div class="mb-3 mt-3">
+                    <label>Prix:</label>
+                    <input type="number" class="form-control form-control-sm" [value]="act.prix" #prix>
+                </div>
 
-    <div class="mb-3 mt-3">
-        <label class="form-label" >Prix:</label>
-        <input type="number" class="form-control" [value]="act.prix"#prix>
-    </div>
+            </td>
+            <td>
 
-<button (click)="modifier(id.value,int.value,ph.value,date.value,cat.value,lieu.value,prix.value,ch.checked)" class="btn btn-primary">
-    Confirmer modification
-</button>
-<button (click)="Annuler()" class="btn btn-danger">Annuler</button>
+                <div class="mb-3 mt-3">
+                    <table class="table table-striped">
+                        <tr>
+                            <td><label>les places sont Limitées </label></td>
+                            <td><input type="radio" name="places" class="form-check-input" [checked]="act.limite" #ch>Oui</td>
+                            <td><input type="radio" name="places" class="form-check-input" [checked]="!act.limite">Non</td>
+                        </tr>
+                    </table>
+                </div>
+
+            </td>
+        </tr>
+    </table>
+    <button (click)="modifier(id.value,int.value,ph.value,date.value,cat.value,lieu.value,prix.value,ch.checked)"
+        id="butt" class="btn btn-primary">
+        Confirmer modification
+    </button>
+    <button (click)="Annuler()" class="btn btn-danger">Annuler</button>
