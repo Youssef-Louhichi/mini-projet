@@ -1,4 +1,5 @@
-<a routerLink="/admin/menu" class="btn btn-light"> <i class="fa-solid fa-arrow-left fa-xl"></i><div><i class="fa-solid fa-user"></i> {{user | titlecase}}</div>
+<a routerLink="/admin/menu" class="btn btn-light"> <i class="fa-solid fa-arrow-left fa-xl"></i>
+    <div><i class="fa-solid fa-user"></i> {{user | titlecase}}</div>
 </a>
 
 <div class="container mt-3">
@@ -43,10 +44,11 @@
                 <td>{{a.categorie}}</td>
                 <td>{{a.lieu}}</td>
                 <td><ng-container *ngFor="let r of a.responsables">
-                    {{r.nom }}<br>
-                </ng-container></td>
-                <td><span *ngIf="a.prix != 0 ; else gratuit" >{{a.prix}}DT</span><ng-template #gratuit>Gratuit</ng-template></td>
-                <td><span *ngIf="a.limite;else non" >Oui</span><ng-template #non>Non</ng-template></td>
+                        {{r.nom }}<br>
+                    </ng-container></td>
+                <td><span *ngIf="a.prix != 0 ; else gratuit">{{a.prix}}DT</span><ng-template
+                        #gratuit>Gratuit</ng-template></td>
+                <td><span *ngIf="a.limite;else non">Oui</span><ng-template #non>Non</ng-template></td>
                 <td><a [routerLink]="['/admin/modifier',a.id]" class="btn btn-info">Modifier</a></td>
                 <td><button (click)="supprimer(a.id)" class="btn btn-danger">X</button></td>
             </tr>
