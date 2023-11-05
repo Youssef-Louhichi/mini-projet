@@ -6,7 +6,7 @@
     <div style="display: flex;justify-content: space-between;">
         <label>Identifiant de l'activitée:<input type="number" (change)="find(id.value)" class="form-control"
                 #id /></label>
-        <label>Categorie:<select (change)="filtre1(cat.value)" class="form-control" #cat>
+        <label>Categorie:<select (change)="filtre(cat.value)" class="form-control" #cat>
                 <option value="" selected>tout</option>
                 <option value="formation">Formation</option>
                 <option value="event">Evennement</option>

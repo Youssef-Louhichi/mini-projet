@@ -26,19 +26,41 @@ export class ListAcitiviteAdminComponent implements OnInit {
 
   supprimer(id:number) {
     this.service.supprimer(id);
+    if (this.f==0)
+      this.find(this.id)
+    if (this.f==1)
+      this.filtre("formation")
+    if (this.f==2)
+      this.filtre("sortie")
+    if (this.f==3)
+      this.filtre("event")
   }
 
+  f:number;
+  id:string;
   find(id: string) {
-    if (id != "")
+    if (id != ""){
       this.activitiesAfficher = this.activities.filter(e => e.id == Number(id))
+      this.id=id;
+      this.f=0;
+    }
     else
       this.activitiesAfficher = this.activities;
 
   }
 
-  filtre1(cat: string) {
-    if (cat != "")
+
+
+  filtre(cat: string) {
+    if (cat != ""){
       this.activitiesAfficher = this.activities.filter(e => e.categorie == cat)
+      if(cat == "formation")
+        this.f=1;
+      if(cat== "sortie")
+        this.f=2
+      if(cat=="event")
+        this.f=3
+    }
     else
       this.activitiesAfficher = this.activities;
 
