@@ -1,5 +1,6 @@
 <a routerLink="/admin/menu" class="btn btn-light"> <i class="fa-solid fa-arrow-left fa-xl"></i><div><i class="fa-solid fa-user"></i> {{user | titlecase}}</div>
 </a>
+
 <div class="container mt-3">
     <div style="display: flex;justify-content: space-between;">
         <label>Identifiant de l'activitée:<input type="number" (change)="find(id.value)" class="form-control"
@@ -13,19 +14,20 @@
 
         <button (click)="goAjouter()" class="btn btn-secondary" style="height: 40px;">Ajouter Activitée</button>
     </div>
+    <hr>
 
     <table class="table table-striped">
         <thead>
             <tr>
-                <th></th>
+                <th>Photo</th>
                 <th (click)="trier(1)"><i class="fa-solid fa-arrows-up-down fa-xs"></i>Id</th>
                 <th (click)="trier(2)"><i class="fa-solid fa-arrows-up-down fa-xs"></i>Intulité</th>
                 <th (click)="trier(3)"><i class="fa-solid fa-arrows-up-down fa-xs"></i>Date</th>
                 <th>Catégorie</th>
                 <th>Lieu</th>
-                <th>responsables</th>
-                <th>prix</th>
-                <th>places Limitées</th>
+                <th>Responsables</th>
+                <th>Prix</th>
+                <th>Places Limitées</th>
                 <th></th>
                 <th></th>
 

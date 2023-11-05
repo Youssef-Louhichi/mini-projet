@@ -10,13 +10,17 @@ export class MembersService {
 
   members:MembreResponsable[]=
   [
-    new MembreResponsable("Youssef","ben Farah","12345678"),
+    new MembreResponsable("Youssef","Ben Farah","12345678"),
     new MembreResponsable("Youssef","Louhichi","21287173"),
-    new MembreResponsable("Aziz","ben Mimoun","12345678")
+    new MembreResponsable("Aziz","Ben Mimoun","12345678")
   ]
 
   public getMembers(){
     return this.members;
+  }
+
+  public ajouter(a:MembreResponsable){
+    this.members.unshift(a)
   }
 
 }

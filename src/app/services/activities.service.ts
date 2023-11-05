@@ -13,11 +13,12 @@ export class ActivitiesService {
   lesresponables:MembreResponsable[]=this.resService.getMembers();
 
   lesactivitees:Activity[]=[
-    new Activity(4,"Formation Montage","assets/activity.png",new Date(2023,12,10),"formation","jehfjke", this.lesresponables,10,true),
-    new Activity(7,"Special Guest","assets/activity.png",new Date(2023,12,23),"event","jehfjke", this.lesresponables,15,true),
-    new Activity(9,"Iset Cinema","assets/activity.png",new Date(2023,12,15),"event","jehfjke",this.lesresponables,0,true),
-    new Activity(1,"Formation Realisation","assets/activity.png",new Date(2023,12,30),"formation","jehfjke", [],20,false),
-    new Activity(14,"Formation plot-writing","assets/activity.png",new Date(2023,12,1),"formation","jehfjke", [],0,false)
+    new Activity(4,"Formation Montage","assets/activity.png",new Date(2023,12,10),"formation","Local Iset", this.lesresponables,10,true),
+    new Activity(7,"Special Guest","assets/activity.png",new Date(2023,12,23),"event","Local Iset", this.lesresponables,15,true),
+    new Activity(9,"Iset Cinema","assets/activity.png",new Date(2023,12,15),"event","Local Iset",this.lesresponables,0,true),
+    new Activity(1,"Formation Realisation","assets/activity.png",new Date(2023,12,30),"formation","Local Iset", [],20,false),
+    new Activity(14,"Formation plot-writing","assets/activity.png",new Date(2023,12,1),"formation","Local Iset", [],0,false),
+    new Activity(3,"Partie cinema:Alien Wars","assets/activity.png",new Date(2023,12,27),"sortie","SALLE:Cine jamil", this.lesresponables,8,true)
   ]
 
   public getActs(){
@@ -41,7 +42,7 @@ export class ActivitiesService {
   }
 
   public ajouter(a:Activity){
-    this.lesactivitees.push(a)
+    this.lesactivitees.unshift(a)
   }
 
   public modifierService(idInit:number,id:string,int:string,ph:string,date:string,cat:string,lieu:string,prix:string,lim:boolean){

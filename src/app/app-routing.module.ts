@@ -14,6 +14,9 @@ import { AdminMenuComponent } from './composants/backOffice/admin-menu/admin-men
 import { adminGuard } from './guards/admin.guard';
 import { ModifierComponent } from './composants/backOffice/modifier/modifier.component';
 import { AjouterComponent } from './composants/backOffice/ajouter/ajouter.component';
+import { BoiteComponent } from './composants/backOffice/boite/boite.component';
+import { ChangerUserNameComponent } from './composants/backOffice/changer-user-name/changer-user-name.component';
+import { AjouterMembreComponent } from './composants/backOffice/ajouter-membre/ajouter-membre.component';
 
 const routes: Routes = [
 
@@ -34,6 +37,9 @@ const routes: Routes = [
 {path:"pwd",title:"Changer Mot de passe", component:ChangerPWDComponent},
 {path:"modifier/:id",title:"Modifier Act", component:ModifierComponent},
 {path:"ajouter",title:"Ajouter Act", component:AjouterComponent},
+{path:"boite",title:"Boite des suggestions", component:BoiteComponent},
+{path:"user",title:"Changer User Name", component:ChangerUserNameComponent},
+{path:"ajouterRes",title:"Ajouter Res", component:AjouterMembreComponent},
 {path:"",redirectTo:"menu",pathMatch:"full"}
 ]
 },

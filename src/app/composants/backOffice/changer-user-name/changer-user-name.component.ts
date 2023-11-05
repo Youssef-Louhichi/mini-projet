@@ -3,24 +3,25 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-  selector: 'app-changer-pwd',
-  templateUrl: './changer-pwd.component.html',
-  styleUrls: ['./changer-pwd.component.css']
+  selector: 'app-changer-user-name',
+  templateUrl: './changer-user-name.component.html',
+  styleUrls: ['./changer-user-name.component.css']
 })
-export class ChangerPWDComponent {
-
+export class ChangerUserNameComponent {
+  
   constructor(private auth: AuthService, private route: Router) { }
 
   user: string = this.auth.getUser();
 
 
-  onChange(pwd1: string, pwd2: string, pwd3: string) {
-    if (this.auth.changerP(pwd1, pwd2) && pwd2 == pwd3) {
-      alert("Mot de passe changer avec succes!")
+  onChange(u: string, pwd: string) {
+    if (this.auth.changerU(u, pwd)) {
+      alert("User Name changer avec succes!")
       this.route.navigate(['/admin/menu'])
     }
     else
       alert("Impossible de changer le mot de passe!")
   }
+
 
 }

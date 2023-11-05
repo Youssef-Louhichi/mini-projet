@@ -29,13 +29,23 @@ export class AuthService {
     localStorage.removeItem('state')
   }
 
-  public changer(pwdAncien:string,pwdNouveau:string){
+  public changerP(pwdAncien:string,pwdNouveau:string){
       if(pwdAncien==this.pwdAdmin){
         this.pwdAdmin=pwdNouveau;
         return true;
       }
       else
         return false;
+
+  }
+
+  public changerU(u:string, pwd:string){
+    if(pwd==this.pwdAdmin){
+      this.userAdmin=u;
+      return true;
+    }
+    else
+      return false;
 
   }
 }

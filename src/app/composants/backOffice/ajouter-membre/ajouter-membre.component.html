@@ -1,0 +1,35 @@
+<a routerLink="/admin/menu" class="btn btn-light"> <i class="fa-solid fa-arrow-left fa-xl"></i> </a>
+<div class="container">
+    <h1><strong>Ajouter Mmebre Responsable</strong></h1>
+    <table class="table table-striped">
+        <tr>
+            <td>
+                <div class="mb-3 mt-3">
+                    <label>Nom:</label>
+                    <input type="text" class="form-control form-control-sm"
+                        (change)="test(nom.value,prenom.value,tel.value)" #nom>
+                </div>
+            </td>
+            <td>
+                <div class="mb-3 mt-3">
+                    <label>Prenom:</label>
+                    <input type="text" class="form-control form-control-sm"
+                        (change)="test(nom.value,prenom.value,tel.value)" #prenom>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="mb-3 mt-3">
+                    <label>Numero telephone:</label>
+                    <input type="text" class="form-control form-control-sm" 
+                        (change)="test(nom.value,prenom.value,tel.value)" #tel>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+<button class="btn btn-primary" id="butt" disabled
+(click)="onAjoute(nom.value,prenom.value,tel.value)">Ajouter</button>

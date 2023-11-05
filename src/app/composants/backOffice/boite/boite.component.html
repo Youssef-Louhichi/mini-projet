@@ -1,0 +1,45 @@
+<a routerLink="/admin/menu" class="btn btn-light"> <i class="fa-solid fa-arrow-left fa-xl"></i>
+    <div><i class="fa-solid fa-user"></i> {{user | titlecase}}</div>
+</a>
+
+<div class="container mt-5">
+
+    <div class="row  d-flex justify-content-center">
+
+        <div class="col-md-8">
+            <div class="card p-3" *ngFor="let s of lessuggestions">
+
+                <div class="d-flex justify-content-between align-items-center">
+
+                    <div class="user d-flex flex-row align-items-center">
+
+                        <i class="fa-solid fa-circle-user fa-xl"></i>
+                        <span>
+                            <span class="font-weight-bold text-primary" style="font-size: large;">{{s.nom}}</span>
+                            <small>
+                                <{{s.mail}}>
+                            </small>
+
+                        </span>
+
+                    </div>
+
+
+                    <small>{{s.date_post | date:'dd/MM/yyyy'}}</small>
+
+                </div>
+                <span class="font-weight-bold">{{s.sugg}}</span>
+
+
+
+                <div class="action d-flex justify-content-between mt-2 align-items-center">
+
+                    <div class=" px-4">
+                        <button (click)="supprimer(s.id)" class="btn btn-link" style="text-decoration: none;color: darkcyan;">Supprimer</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

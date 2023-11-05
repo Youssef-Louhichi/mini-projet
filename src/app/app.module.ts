@@ -19,6 +19,9 @@ import { ModifierComponent } from './composants/backOffice/modifier/modifier.com
 import { AjouterComponent } from './composants/backOffice/ajouter/ajouter.component';
 import { FormsModule } from '@angular/forms';
 import { ListenfantComponent } from './composants/fontOffice/listenfant/listenfant.component';
+import { BoiteComponent } from './composants/backOffice/boite/boite.component';
+import { ChangerUserNameComponent } from './composants/backOffice/changer-user-name/changer-user-name.component';
+import { AjouterMembreComponent } from './composants/backOffice/ajouter-membre/ajouter-membre.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +41,9 @@ import { ListenfantComponent } from './composants/fontOffice/listenfant/listenfa
     ModifierComponent,
     AjouterComponent,
     ListenfantComponent,
+    BoiteComponent,
+    ChangerUserNameComponent,
+    AjouterMembreComponent,
   ],
   imports: [
     BrowserModule,

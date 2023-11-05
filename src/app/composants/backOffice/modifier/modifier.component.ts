@@ -37,6 +37,8 @@ export class ModifierComponent implements OnInit{
 
   modifier(id:string,int:string,ph:string,date:string,cat:string,lieu:string,prix:string,ch:boolean){
     
+    if(!this.lesactivities.find(e=>e.id==Number(id))){
+
     if(ph==""){
       ph="assets/activity.png"
     }
@@ -45,6 +47,11 @@ export class ModifierComponent implements OnInit{
     }
     this.service.modifierService(this.idInit,id,int,ph,date,cat,lieu,prix,ch)
     this.route.navigate(['/admin/acts'])
+  }
+  else{
+    alert("Id existe déjà pour une autre activitée.")
+  }
+
   }
 
   Annuler(){
