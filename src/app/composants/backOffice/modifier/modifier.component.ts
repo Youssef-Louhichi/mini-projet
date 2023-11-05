@@ -24,8 +24,8 @@ export class ModifierComponent implements OnInit{
     
   }
 
-  modifier(id:string,int:string,ph:string,date:string,cat:string,lieu:string){
-    this.service.modifierService(this.idInit,id,int,ph,date,cat,lieu)
+  modifier(id:string,int:string,ph:string,date:string,cat:string,lieu:string,prix:string,ch:boolean){
+    this.service.modifierService(this.idInit,id,int,ph,date,cat,lieu,prix,ch)
     this.route.navigate(['/admin/acts'])
   }
 

@@ -1,13 +1,47 @@
-Id<input type="number" [value]="act.id" #id ><br>
-Intulité<input type="text" [value]="act.int" #int><br>
-photo<input type="text" [value]="act.photo" #ph><br>
-date:<input type="date" [value]="act.date_act" #date><br>
-categorie:<select #cat>
-    <option value="formation" selected>Formation</option>
-    <option value="event">Evennement</option>
-    <option value="sortie">Sortie</option>
-    </select><br>
-lieu:<input type="text" [value]="act.lieu" #lieu><br>
+<a routerLink="/admin/acts" class="btn btn-light"> <i class="fa-solid fa-arrow-left fa-xl"></i> </a>
+<div class="container">
+    <h1><strong>Modifier Activitée</strong></h1>
+    <div class="mb-3 mt-3">
+        <label class="form-label">ID:</label>
+        <input type="number" class="form-control" [value]="act.id" #id>
+    </div>
+    <div class="mb-3 mt-3">
+        <label class="form-label">Intulité:</label>
+        <input type="text" class="form-control" [value]="act.int" #int>
+    </div>
+    <div class="mb-3 mt-3">
+        <label class="form-label">photo:</label>
+        <input type="file" class="form-control" [value]="act.photo" #ph>
+    </div>
+    <div class="mb-3 mt-3">
+        <label class="form-label">Date:</label>
+        <input type="date" class="form-control" [value]="act.date_act" #date>
+    </div>
+    <div class="mb-3 mt-3">
+        <label class="form-label">categorie:</label>
+        <select class="form-control" [value]="act.categorie" #cat>
+            <option value="formation">Formation</option>
+            <option value="event">Evennement</option>
+            <option value="sortie">Sortie</option>
+        </select>
+    </div>
+    <div class="mb-3 mt-3">
+        <label class="form-label">Lieu:</label>
+        <input type="text" class="form-control" [value]="act.lieu" #lieu>
+    </div>
 
-<button (click)="modifier(id.value,int.value,ph.value,date.value,cat.value,lieu.value)">Confirmer modification</button>
-<button (click)="Annuler()">Annuler</button>
+    <div class="mb-3 mt-3">
+        <label class="form-label">les places sont Limitées  </label>
+        <input type="radio" name="places"  #ch>Oui
+        <input type="radio" name="places" >Non
+    </div>
+
+    <div class="mb-3 mt-3">
+        <label class="form-label" >Prix:</label>
+        <input type="number" class="form-control" [value]="act.prix"#prix>
+    </div>
+
+<button (click)="modifier(id.value,int.value,ph.value,date.value,cat.value,lieu.value,prix.value,ch.checked)" class="btn btn-primary">
+    Confirmer modification
+</button>
+<button (click)="Annuler()" class="btn btn-danger">Annuler</button>

@@ -1,11 +1,47 @@
-Id:<input type="number" #id><br>
-Intulité:<input type="text" #int><br>
-photo:<input type="file" #ph><br>
-Date:<input type="date" #date><br>
-categorie:<select #cat>
-    <option value="formation" selected>Formation</option>
-    <option value="event">Evennement</option>
-    <option value="sortie">Sortie</option>
-    </select><br>
-Lieu:<input type="text"  #lieu><br>
-<button (click)="onAjoute(id.value,int.value,ph.value,date.value,cat.value,lieu.value)">ajouter</button>
+<a routerLink="/admin/acts" class="btn btn-light"> <i class="fa-solid fa-arrow-left fa-xl"></i> </a>
+<div class="container">
+    <h1><strong>Ajouter Activitée</strong></h1>
+    <div class="mb-3 mt-3">
+        <label class="form-label">ID:</label>
+        <input type="number" class="form-control" #id>
+    </div>
+    <div class="mb-3 mt-3">
+        <label class="form-label">Intulité:</label>
+        <input type="text" class="form-control" #int>
+    </div>
+    <div class="mb-3 mt-3">
+        <label class="form-label">photo:</label>
+        <input type="file" class="form-control" #ph>
+    </div>
+    <div class="mb-3 mt-3">
+        <label class="form-label">Date:</label>
+        <input type="date" class="form-control" #date>
+    </div>
+    <div class="mb-3 mt-3">
+        <label class="form-label">categorie:</label>
+        <select class="form-control" #cat>
+            <option value="formation" selected>Formation</option>
+            <option value="event">Evennement</option>
+            <option value="sortie">Sortie</option>
+        </select>
+    </div>
+    <div class="mb-3 mt-3">
+        <label class="form-label">Lieu:</label>
+        <input type="text" class="form-control" #lieu>
+    </div>
+
+    <div class="mb-3 mt-3">
+        <label class="form-label">les places sont Limitées  </label>
+        <input type="radio" name="places" #ch>Oui
+        <input type="radio" name="places" checked >Non
+    </div>
+
+    <div class="mb-3 mt-3">
+        <label class="form-label">Prix:</label>
+        <input type="number" class="form-control" #prix>
+    </div>
+
+
+    <button class="btn btn-primary"
+        (click)="onAjoute(id.value,int.value,ph.value,date.value,cat.value,lieu.value,prix.value,ch.checked)">Ajouter</button>
+</div>

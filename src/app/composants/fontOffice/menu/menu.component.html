@@ -1,29 +1,25 @@
-
-<div>
-<img src="assets/banniere.png" alt="banniere ISET">
-
-    <strong class="text-center">Club ISET'Cima</strong>
-
-</div>
+<h1 class="display-1 font-weight-bold">Club ISET'Cima</h1>
+<img src="assets/banniere.png" class="w-100" alt="banniere ISET" style="height:230px;">
 
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-    <div class="container-fluid">
-      <div class="collapse navbar-collapse" id="mynavbar">
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/pub" routerLinkActive="active">Movies</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/aboutus" routerLinkActive="active">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="#" routerLinkActive="active">autre fonc</a>
-          </li>
-        </ul>
-          <button class="btn btn-info" type="button" (click)="goLogin()">Espace Admin</button>
-      </div>
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a  routerLinkActive="active" class="nav-link"  routerLink="/home"><i class="fa-solid fa-house fa-xl" style="color: #ffffff;"></i> </a>
+
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/pub" routerLinkActive="active">Movies</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/aboutus" routerLinkActive="active">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="#" routerLinkActive="active">autre fonc</a>
+        </li>
+      </ul>
+      <button class="btn btn-info" type="button" (click)="goLogin()">Espace Admin</button>
     </div>
-  </nav>
+  </div>
+</nav>

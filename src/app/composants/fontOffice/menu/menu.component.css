@@ -1,1 +1,4 @@
 .active{font-weight: bold; color: aliceblue;}
+h1 { color: #111; font-family: 'Open Sans Condensed', 
+    sans-serif; font-size: 70px; font-weight: 700; text-align: center;
+    position: absolute;top: 13%;left: 50%; }

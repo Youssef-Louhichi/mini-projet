@@ -1,11 +1,11 @@
-<a routerLink="/admin/menu">retour</a>
+<a routerLink="/admin/menu" class="btn btn-light"> <i class="fa-solid fa-arrow-left fa-xl"></i> </a>
 <table>
-    <tbody><tr><td>Ancien mot de passe </td><td><input type="text" #pwd1></td>
+    <tbody><tr><td>Ancien mot de passe </td><td><input type="text" class="form-control" #pwd1></td>
     </tr>
-    <tr><td>nouveau mot de passe</td><td><input type="password" #pwd2></td>
+    <tr><td>Nouveau mot de passe</td><td><input type="password" class="form-control" #pwd2></td>
     </tr>
-    <tr><td>confirmer nouveau mot de passe</td><td><input type="password" #pwd3></td>
+    <tr><td>Confirmer nouveau mot de passe</td><td><input type="password" class="form-control" #pwd3></td>
     </tr>
 </tbody>
 </table>
-<button (click)="onChange(pwd1.value,pwd2.value,pwd3.value)">changer</button>
+<button (click)="onChange(pwd1.value,pwd2.value,pwd3.value)" class="btn btn-primary">changer</button>

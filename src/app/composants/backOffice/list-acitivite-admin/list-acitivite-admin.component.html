@@ -1,38 +1,51 @@
-<a routerLink="/admin/menu" > <i class="fa-solid fa-arrow-left"></i> Retour</a>
+<a routerLink="/admin/menu" class="btn btn-light"> <i class="fa-solid fa-arrow-left fa-xl"></i> </a>
 <div class="container mt-3">
-    <button (click)="goAjouter()">Ajouter</button>
-    
-    Identifiant de l'activitées:<input type="number" (change)="find(id.value)" #id/>
-    Categorie:<select (change)="filtre1(cat.value)" #cat>
-    <option value="formation">Formation</option>
-    <option value="event">Evennement</option>
-    <option value="sortie">Sortie</option>
-    <option value="" selected>tout</option>
-</select>
+    <div style="display: flex;justify-content: space-between;">
+        <label>Identifiant de l'activitée:<input type="number" (change)="find(id.value)" class="form-control"
+                #id /></label>
+        <label>Categorie:<select (change)="filtre1(cat.value)" class="form-control" #cat>
+                <option value="" selected>tout</option>
+                <option value="formation">Formation</option>
+                <option value="event">Evennement</option>
+                <option value="sortie">Sortie</option>
+            </select></label>
+
+        <button (click)="goAjouter()" class="btn btn-secondary" style="height: 40px;">Ajouter Activitée</button>
+    </div>
+
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Intulité</th>
-                <th>photo</th>
-                <th>date</th>
-                <th>categorie</th>
-                <th>lieu</th>
+                <th></th>
+                <th (click)="trier(1)"><i class="fa-solid fa-arrows-up-down fa-xs"></i>Id</th>
+                <th (click)="trier(2)"><i class="fa-solid fa-arrows-up-down fa-xs"></i>Intulité</th>
+                <th (click)="trier(3)"><i class="fa-solid fa-arrows-up-down fa-xs"></i>Date</th>
+                <th>Catégorie</th>
+                <th>Lieu</th>
+                <th>responsables</th>
+                <th>prix</th>
+                <th>places Limitées</th>
                 <th></th>
                 <th></th>
+
             </tr>
         </thead>
         <tbody>
 
             <tr *ngFor="let a of activitiesAfficher">
+                <td><img [src]="a.photo"></td>
                 <td>{{a.id}}</td>
                 <td>{{a.int}}</td>
-                <td>{{a.photo}}</td>
                 <td>{{a.date_act | date:"dd/MM/yyyy"}}</td>
                 <td>{{a.categorie}}</td>
                 <td>{{a.lieu}}</td>
-                <td><a [routerLink]="['/admin/modifier',a.id]">Modifier</a></td>
-                <td><button (click)="supprimer(a.id)">X</button></td>
+                <td><ng-container *ngFor="let r of a.responsables">
+                    {{r.nom }}
+                </ng-container></td>
+                <td>{{a.prix}}</td>
+                <td><span *ngIf="a.limite" >Oui</span><span *ngIf="!a.limite" >Non</span></td>
+                <td><a [routerLink]="['/admin/modifier',a.id]" class="btn btn-info">Modifier</a></td>
+                <td><button (click)="supprimer(a.id)" class="btn btn-danger">X</button></td>
             </tr>
         </tbody>
     </table>

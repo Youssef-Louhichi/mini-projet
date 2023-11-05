@@ -43,6 +43,20 @@ export class ListAcitiviteAdminComponent implements OnInit {
     this.route.navigate(['/admin/ajouter'])
   }
 
+  trier(i:number){
+    if(i==1){
+      this.activitiesAfficher.sort((a, b) => (a.id > b.id ? 1 : -1))
+    }
+
+    if(i==2){
+      this.activitiesAfficher.sort((a, b) => (a.int > b.int ? 1 : -1))
+    }
+
+    if(i==3){
+      this.activitiesAfficher.sort((a, b) => (a.date_act > b.date_act ? 1 : -1))
+    }
+  }
+
 
 
 }
