@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Activity } from 'src/app/classes/activity';
 import { MembreResponsable } from 'src/app/classes/membre-responsable';
+import { ActivitiesService } from 'src/app/services/activities.service';
 import { MembersService } from 'src/app/services/members.service';
 
 @Component({
@@ -12,13 +14,17 @@ export class AjouterMembreComponent implements OnInit {
 
 
 
-  constructor( private route: Router, private resService: MembersService) { }
+  constructor( private route: Router, private resService: MembersService,
+    private actservice:ActivitiesService) { }
 
   lesresponsables: MembreResponsable[];
   newResponsable: MembreResponsable;
+  lesactivitees:Activity[];
 
   ngOnInit(): void {
     this.resService.getMembers().subscribe(data => this.lesresponsables=data)
+    this.actservice.getActs().subscribe(data => this.lesactivitees=data)
+
   }
 
   onAjoute(nom: string, prenom: string, tel: string) {
@@ -26,7 +32,15 @@ export class AjouterMembreComponent implements OnInit {
 
       
       this.newResponsable = new MembreResponsable(nom,prenom,tel)
-      this.resService.ajouter(this.newResponsable).subscribe(data => console.log(data))
+      this.resService.ajouter(this.newResponsable).subscribe()
+      this.lesactivitees.forEach(e=>{
+        if(e.limite){
+        let tab=e.responsables
+        tab.unshift(this.newResponsable)
+        e.responsables=tab     
+        this.actservice.modifierService(e.id,e).subscribe()}
+
+      })
       this.route.navigate(['/admin/acts'])
     }
     else {

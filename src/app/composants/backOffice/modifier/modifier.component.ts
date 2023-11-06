@@ -11,23 +11,25 @@ import { MembersService } from 'src/app/services/members.service';
   styleUrls: ['./modifier.component.css']
 })
 export class ModifierComponent implements OnInit {
-  constructor(private service: ActivitiesService,private membreservice:MembersService ,private activatedRoute: ActivatedRoute,
+  constructor(private service: ActivitiesService, private membreservice: MembersService, private activatedRoute: ActivatedRoute,
     private route: Router) { }
   lesactivities: Activity[] = [];
 
 
   act: Activity;
   idInit: number;
-  lesresponsables:MembreResponsable[];
+  lesresponsables: MembreResponsable[];
 
   ngOnInit(): void {
 
-    this.service.getActs().subscribe( data => {this.lesactivities = data
+    this.service.getActs().subscribe(data => {
+      this.lesactivities = data
       this.idInit = this.activatedRoute.snapshot.params['id']
-    this.act = this.lesactivities.find(e => e.id == this.idInit)}
-      );
+      this.act = this.lesactivities.find(e => e.id == this.idInit)
+    }
+    );
 
-    this.membreservice.getMembers().subscribe(data => this.lesresponsables=data )    
+    this.membreservice.getMembers().subscribe(data => this.lesresponsables = data)
 
   }
 
@@ -44,7 +46,8 @@ export class ModifierComponent implements OnInit {
 
   modifier(id: string, int: string, ph: string, date: string, cat: string, lieu: string, prix: string, ch: boolean) {
 
-    if (this.lesactivities.find(e => e.id == Number(id))==this.act) {
+    if (this.lesactivities.find(e => e.id == Number(id)) == this.act ||
+      !this.lesactivities.find(e => e.id == Number(id))) {
 
       if (ph == "") {
         ph = "assets/activity.png"
@@ -53,19 +56,19 @@ export class ModifierComponent implements OnInit {
         ph = "assets\\" + ph.split("\\")[2];
       }
 
-      this.act.id=Number(id);
-      this.act.int=int;
-      this.act.date_act=new Date(date);
-      this.act.photo=ph;
-      this.act.categorie=cat;
-      this.act.lieu=lieu;
-      this.act.prix=Number(prix);
-      this.act.limite=ch;
+      this.act.id = Number(id);
+      this.act.int = int;
+      this.act.date_act = new Date(date);
+      this.act.photo = ph;
+      this.act.categorie = cat;
+      this.act.lieu = lieu;
+      this.act.prix = Number(prix);
+      this.act.limite = ch;
 
-      if(ch){this.act.responsables=this.lesresponsables}
-      else{this.act.responsables=[];}
+      if (ch) { this.act.responsables = this.lesresponsables }
+      else { this.act.responsables = []; }
 
-      this.service.modifierService(Number(id),this.act).subscribe()
+      this.service.modifierService(Number(id), this.act).subscribe()
       this.route.navigate(['/admin/acts'])
     }
     else {
