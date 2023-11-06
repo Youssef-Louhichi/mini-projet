@@ -15,8 +15,9 @@ export class ListeActiviteComponent implements OnInit{
   activitiesAfficher: Activity[];
 
   ngOnInit(): void {
-    this.activities = this.service.getActs();
-    this.activitiesAfficher = this.activities;
+    this.service.getActs().subscribe( data => {this.activities=data
+    this.activitiesAfficher = this.activities;}
+    );
   }
 
 

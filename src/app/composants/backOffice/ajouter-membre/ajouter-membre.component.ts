@@ -18,7 +18,7 @@ export class AjouterMembreComponent implements OnInit {
   newResponsable: MembreResponsable;
 
   ngOnInit(): void {
-    this.lesresponsables=this.resService.getMembers()
+    this.resService.getMembers().subscribe(data => this.lesresponsables=data)
   }
 
   onAjoute(nom: string, prenom: string, tel: string) {
@@ -26,7 +26,7 @@ export class AjouterMembreComponent implements OnInit {
 
       
       this.newResponsable = new MembreResponsable(nom,prenom,tel)
-      this.resService.ajouter(this.newResponsable)
+      this.resService.ajouter(this.newResponsable).subscribe(data => console.log(data))
       this.route.navigate(['/admin/acts'])
     }
     else {

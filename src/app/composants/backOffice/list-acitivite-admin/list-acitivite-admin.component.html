@@ -36,7 +36,7 @@
         </thead>
         <tbody>
 
-            <tr *ngFor="let a of activitiesAfficher">
+            <tr *ngFor="let a of activitiesAfficher, index as i">
                 <td><img [src]="a.photo" style="height: 40px;width: 40px;"></td>
                 <td>{{a.id}}</td>
                 <td>{{a.int}}</td>
@@ -50,7 +50,7 @@
                         #gratuit>Gratuit</ng-template></td>
                 <td><span *ngIf="a.limite;else non">Oui</span><ng-template #non>Non</ng-template></td>
                 <td><a [routerLink]="['/admin/modifier',a.id]" class="btn btn-info">Modifier</a></td>
-                <td><button (click)="supprimer(a.id)" class="btn btn-danger">X</button></td>
+                <td><button (click)="supprimer(a.id,i)" class="btn btn-danger">X</button></td>
             </tr>
         </tbody>
     </table>

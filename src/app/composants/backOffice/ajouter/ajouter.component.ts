@@ -18,11 +18,10 @@ export class AjouterComponent implements OnInit{
   lesresponsables: MembreResponsable[];
   tab: MembreResponsable[] = [];
   lesactivitees: Activity[];
-  newAct: Activity;
 
   ngOnInit(): void {
-    this.lesactivitees = this.actService.getActs()
-    this.lesresponsables=this.resService.getMembers();
+    this.actService.getActs().subscribe( data => this.lesactivitees = data);
+    this.resService.getMembers().subscribe(data => this.lesresponsables=data);
   }
 
 
@@ -40,9 +39,9 @@ export class AjouterComponent implements OnInit{
         this.tab = this.lesresponsables;
       }
 
-      this.newAct = new Activity(Number(id), int, ph, new Date(date), cat, lieu, this.tab, Number(prix), lim)
-      this.actService.ajouter(this.newAct)
-      this.route.navigate(['/admin/acts'])
+      let newAct = new Activity(Number(id), int, ph, new Date(date), cat, lieu, this.tab, Number(prix), lim)
+      this.actService.ajouter(newAct).subscribe(data => this.lesactivitees.unshift(data) )     
+        this.route.navigate(['/admin/acts'])
     }
     else {
       alert("Id existe déjà pour une autre activitée.")

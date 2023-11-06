@@ -15,12 +15,14 @@ export class BoiteComponent implements OnInit{
   user:string;
 
   ngOnInit(): void {
-    this.lessuggestions=this.sugService.getSug().sort((a,b)=> (a.date_post > b.date_post ? 1 : -1))
+    this.sugService.getSug().subscribe(data => {this.lessuggestions=data
+    this.lessuggestions.sort((a,b)=> (a.date_post < b.date_post ? 1 : -1))})
     this.user = this.serviceAuth.getUser();
   }
 
-  supprimer(id:number){
-    this.sugService.supprimer(id)
+  supprimer(id:number,i:number){
+    this.sugService.supprimer(id).subscribe()
+    this.lessuggestions.splice(i,1)
   }
 
 }

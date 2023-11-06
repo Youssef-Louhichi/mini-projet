@@ -1,26 +1,23 @@
 import { Injectable } from '@angular/core';
 import { MembreResponsable } from '../classes/membre-responsable';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+const URL = "http://localhost:3000/membres";
 
 @Injectable({
   providedIn: 'root'
 })
 export class MembersService {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
-  members:MembreResponsable[]=
-  [
-    new MembreResponsable("Youssef","Ben Farah","12345678"),
-    new MembreResponsable("Youssef","Louhichi","21287173"),
-    new MembreResponsable("Aziz","Ben Mimoun","12345678")
-  ]
-
-  public getMembers(){
-    return this.members;
+  public getMembers():Observable<MembreResponsable[]>{
+    return this.http.get<MembreResponsable[]>(URL);
   }
 
-  public ajouter(a:MembreResponsable){
-    this.members.unshift(a)
+  public ajouter(a:MembreResponsable):Observable<MembreResponsable>{
+    return this.http.post<MembreResponsable>(URL,a);  
   }
 
 }

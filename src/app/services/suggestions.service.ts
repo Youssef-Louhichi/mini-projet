@@ -1,38 +1,29 @@
 import { Injectable } from '@angular/core';
 import { Suggestion } from '../classes/suggestion';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+const URL = "http://localhost:3000/suggestions";
 
 @Injectable({
   providedIn: 'root'
 })
 export class SuggestionsService {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
-  lesSuggestions:Suggestion[]=[
-    new Suggestion("3ammar","3ammar0@gmail.com","Loving your club and site!",new Date(2023,11,5)),
-    new Suggestion("3ammar","3ammar0@gmail.com",
-    "J'espere que vous organisez Watch party pour les film de marvel et dc",new Date(2023,11,2)),
-    new Suggestion("3ammar","3ammar0@gmail.com",
-    "J'espere que vous organisez Watch party pour les film de disney",new Date(2023,10,25))
-  ]
+ 
 
-  public getSug(){
-    return this.lesSuggestions;
+  public getSug():Observable<Suggestion[]>{
+      return this.http.get<Suggestion[]>(URL)
   }
 
-  i:number;
-  indice:number;
+  
   
 
   public supprimer(id: number){
-    for(this.i=0;this.i<this.lesSuggestions.length;this.i++){
-      if (this.lesSuggestions[this.i].id==id){
-       this.indice=this.i;
-       break;
-      }
-    }
-
-      this.lesSuggestions.splice(this.indice,1)
+    
+    return this.http.delete(URL+"/"+ id);
 
   }
 

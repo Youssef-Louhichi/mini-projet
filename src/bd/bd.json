@@ -1,0 +1,201 @@
+{
+  "activitees": [
+    {
+      "id": 4,
+      "int": "Formation Montage",
+      "photo": "assets/activity.png",
+      "date_act": "2023-11-29T00:00:00.000Z",
+      "categorie": "formation",
+      "lieu": "Local Iset",
+      "responsables": [
+        {
+          "nom": "Ben farah",
+          "prenom": "Youssef",
+          "tel": "12345678"
+        },
+        {
+          "nom": "Louhichi",
+          "prenom": "Youssef",
+          "tel": "21287173"
+        },
+        {
+          "nom": "Ben Mimoun",
+          "prenom": "Aziz",
+          "tel": "12345678"
+        }
+      ],
+      "prix": 10,
+      "limite": true
+    },
+    {
+      "id": 7,
+      "int": "Special Guest",
+      "photo": "assets/activity.png",
+      "date_act": "2023/12/23",
+      "categorie": "event",
+      "lieu": "Local Iset",
+      "responsables": [
+        {
+          "nom": "Ben farah",
+          "prenom": "Youssef",
+          "tel": "12345678"
+        },
+        {
+          "nom": "Louhichi",
+          "prenom": "Youssef",
+          "tel": "21287173"
+        },
+        {
+          "nom": "Ben Mimoun",
+          "prenom": "Aziz",
+          "tel": "12345678"
+        }
+      ],
+      "prix": 15,
+      "limite": true
+    },
+    {
+      "id": 9,
+      "int": "Watch Party",
+      "photo": "assets/activity.png",
+      "date_act": "2023-12-13T00:00:00.000Z",
+      "categorie": "event",
+      "lieu": "Local Iset",
+      "responsables": [
+        {
+          "nom": "Ben farah",
+          "prenom": "Youssef",
+          "tel": "12345678"
+        },
+        {
+          "nom": "Louhichi",
+          "prenom": "Youssef",
+          "tel": "21287173"
+        },
+        {
+          "nom": "Ben Mimoun",
+          "prenom": "Aziz",
+          "tel": "12345678"
+        }
+      ],
+      "prix": 0,
+      "limite": true
+    },
+    {
+      "id": 1,
+      "int": "Formation Realisation",
+      "photo": "assets/activity.png",
+      "date_act": "2023/12/30",
+      "categorie": "formation",
+      "lieu": "Local Iset",
+      "responsables": [],
+      "prix": 20,
+      "limite": false
+    },
+    {
+      "id": 14,
+      "int": "Formation plot-writing",
+      "photo": "assets/activity.png",
+      "date_act": "2023-12-22T00:00:00.000Z",
+      "categorie": "formation",
+      "lieu": "Local Iset",
+      "responsables": [],
+      "prix": 0,
+      "limite": false
+    },
+    {
+      "id": 3,
+      "int": "Partie cinema:Alien Wars",
+      "photo": "assets/activity.png",
+      "date_act": "2023-12-07T00:00:00.000Z",
+      "categorie": "sortie",
+      "lieu": "SALLE:Cine jamil",
+      "responsables": [
+        {
+          "nom": "Ben farah",
+          "prenom": "Youssef",
+          "tel": "12345678"
+        },
+        {
+          "nom": "Louhichi",
+          "prenom": "Youssef",
+          "tel": "21287173"
+        },
+        {
+          "nom": "Ben Mimoun",
+          "prenom": "Aziz",
+          "tel": "12345678"
+        }
+      ],
+      "prix": 10,
+      "limite": true
+    },
+    {
+      "id": 22,
+      "int": "formation lumiére",
+      "photo": "assets/activity.png",
+      "date_act": "2023-11-09T00:00:00.000Z",
+      "categorie": "formation",
+      "lieu": "local iset",
+      "responsables": [
+        {
+          "nom": "Ben farah",
+          "prenom": "Youssef",
+          "tel": "12345678"
+        },
+        {
+          "nom": "Louhichi",
+          "prenom": "Youssef",
+          "tel": "21287173"
+        },
+        {
+          "nom": "Ben Mimoun",
+          "prenom": "Aziz",
+          "tel": "12345678"
+        }
+      ],
+      "prix": 35,
+      "limite": true
+    }
+  ],
+  "membres": [
+    {
+      "id": 1,
+      "nom": "Ben farah",
+      "prenom": "Youssef",
+      "tel": "12345678"
+    },
+    {
+      "id": 2,
+      "nom": "Louhichi",
+      "prenom": "Youssef",
+      "tel": "21287173"
+    },
+    {
+      "id": 3,
+      "nom": "Ben Mimoun",
+      "prenom": "Aziz",
+      "tel": "12345678"
+    }
+  ],
+  "suggestions": [
+    {
+      "id": "0",
+      "nom": "3ammar0@gmail.com",
+      "mail": "Loving your club and site!",
+      "date_post": "11-5-2023"
+    },
+    {
+      "id": "1",
+      "nom": "3ammar0@gmail.com",
+      "mail": "J'espere que vous organisez Watch party pour les film de marvel et dc",
+      "date_post": "11-12-2023"
+    },
+    {
+      "id": "2",
+      "nom": "3ammar0@gmail.com",
+      "mail": "'espere que vous organisez Watch party pour les film de disney",
+      "date_post": "11-25-2023"
+    }
+  ]
+}

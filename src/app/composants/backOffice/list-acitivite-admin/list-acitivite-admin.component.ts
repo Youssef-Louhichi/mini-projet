@@ -11,38 +11,39 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./list-acitivite-admin.component.css']
 })
 export class ListAcitiviteAdminComponent implements OnInit {
-  constructor(private service: ActivitiesService, private route: Router, private serviceAuth: AuthService) { }
+  constructor(private activityservice: ActivitiesService, private route: Router, private serviceAuth: AuthService) { }
   activities: Activity[];
   activitiesAfficher: Activity[];
   user: string
 
 
   ngOnInit(): void {
-    this.activities = this.service.getActs();
-    this.activitiesAfficher = this.activities;
+    this.activityservice.getActs().subscribe( data => {this.activities = data
+      this.activitiesAfficher=this.activities}
+
+      );
     this.user = this.serviceAuth.getUser();
 
   }
 
-  supprimer(id:number) {
-    this.service.supprimer(id);
-    if (this.f==0)
-      this.find(this.id)
-    if (this.f==1)
-      this.filtre("formation")
-    if (this.f==2)
-      this.filtre("sortie")
-    if (this.f==3)
-      this.filtre("event")
+  
+
+  supprimer(id:number,i:number) {
+    this.activityservice.supprimerAct(id).subscribe();
+
+    this.activitiesAfficher.splice(i,1)
+
+    for(i=0;i<this.activities.length;i++){
+      if(this.activities[i].id==id)
+        break;
+    }
+    this.activities.splice(i,1)
   }
 
-  f:number;
-  id:string;
+  
   find(id: string) {
     if (id != ""){
       this.activitiesAfficher = this.activities.filter(e => e.id == Number(id))
-      this.id=id;
-      this.f=0;
     }
     else
       this.activitiesAfficher = this.activities;
@@ -54,12 +55,6 @@ export class ListAcitiviteAdminComponent implements OnInit {
   filtre(cat: string) {
     if (cat != ""){
       this.activitiesAfficher = this.activities.filter(e => e.categorie == cat)
-      if(cat == "formation")
-        this.f=1;
-      if(cat== "sortie")
-        this.f=2
-      if(cat=="event")
-        this.f=3
     }
     else
       this.activitiesAfficher = this.activities;
