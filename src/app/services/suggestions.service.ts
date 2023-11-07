@@ -22,9 +22,11 @@ export class SuggestionsService {
   
 
   public supprimer(id: number){
-    
     return this.http.delete(URL+"/"+ id);
+  }
 
+  public ajouter(s:Suggestion):Observable<Suggestion>{
+    return this.http.post<Suggestion>(URL,s);  
   }
 
   
