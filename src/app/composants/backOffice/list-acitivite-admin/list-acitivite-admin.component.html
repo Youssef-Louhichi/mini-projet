@@ -46,8 +46,9 @@
                 <td><ng-container *ngFor="let r of a.responsables">
                         {{r.nom }}<br>
                     </ng-container></td>
-                <td><span *ngIf="a.prix != 0 ; else gratuit">{{a.prix}}DT</span><ng-template
-                        #gratuit>Gratuit</ng-template></td>
+                <td><span *ngIf="a.prix != 0 ; else gratuit" class="badge rounded-pill  bg-dark">
+                    <i class="fa-solid fa-coins"></i>{{a.prix}}DT</span><ng-template
+                        #gratuit >Gratuit</ng-template></td>
                 <td><span *ngIf="a.limite;else non">Oui</span><ng-template #non>Non</ng-template></td>
                 <td><a [routerLink]="['/admin/modifier',a.id]" class="btn btn-info">Modifier</a></td>
                 <td><button (click)="supprimer(a.id,i)" class="btn btn-danger">X</button></td>
