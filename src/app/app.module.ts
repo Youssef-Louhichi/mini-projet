@@ -17,7 +17,7 @@ import { DashComponent } from './composants/fontOffice/dash/dash.component';
 import { ErreurComponent } from './composants/erreur/erreur.component';
 import { ModifierComponent } from './composants/backOffice/modifier/modifier.component';
 import { AjouterComponent } from './composants/backOffice/ajouter/ajouter.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListenfantComponent } from './composants/fontOffice/listenfant/listenfant.component';
 import { BoiteComponent } from './composants/backOffice/boite/boite.component';
 import { ChangerUserNameComponent } from './composants/backOffice/changer-user-name/changer-user-name.component';
@@ -51,7 +51,8 @@ import { AjouterMembreComponent } from './composants/backOffice/ajouter-membre/a
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
 
   ],
   providers: [],

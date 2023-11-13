@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Activity } from 'src/app/classes/activity';
 import { ActivitiesService } from 'src/app/services/activities.service';
+
 @Component({
   selector: 'app-activite-selected',
   templateUrl: './activite-selected.component.html',

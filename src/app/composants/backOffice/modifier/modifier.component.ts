@@ -1,4 +1,6 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Activity } from 'src/app/classes/activity';
 import { MembreResponsable } from 'src/app/classes/membre-responsable';
@@ -19,17 +21,24 @@ export class ModifierComponent implements OnInit {
   act: Activity;
   idInit: number;
   lesresponsables: MembreResponsable[];
+  modifierForm:FormGroup;
 
   ngOnInit(): void {
+    
+      
 
     this.service.getActs().subscribe(data => {
       this.lesactivities = data
       this.idInit = this.activatedRoute.snapshot.params['id']
       this.act = this.lesactivities.find(e => e.id == this.idInit)
+
+
     }
     );
 
     this.membreservice.getMembers().subscribe(data => this.lesresponsables = data)
+
+    
 
   }
 
@@ -76,6 +85,8 @@ export class ModifierComponent implements OnInit {
     }
 
   }
+
+  
 
   Annuler() {
     this.route.navigate(['/admin/acts'])
