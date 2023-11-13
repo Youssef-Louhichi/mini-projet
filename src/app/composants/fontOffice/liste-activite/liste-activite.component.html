@@ -7,10 +7,10 @@
     <option value="" selected>tout</option>
 </select>
     <ul>
-            <li *ngFor="let a of activitiesAfficher">
-              <app-listenfant [li]="a"></app-listenfant>
-              
-            </li>
+            <div *ngFor="let a of activitiesAfficher">
+             <app-listenfant [li]="a"></app-listenfant>
+           
+            </div>
         </ul>
 
         

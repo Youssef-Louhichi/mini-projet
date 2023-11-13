@@ -33,7 +33,7 @@ const routes: Routes = [
 
 {path:"admin",component:DashAdminComponent, canActivate:[adminGuard] ,children:
 [{path:"menu",title:"Welcome Admin",component:AdminMenuComponent},
-  {path:"acts",title:"List Activity",component:ListAcitiviteAdminComponent},
+{path:"acts",title:"List Activity",component:ListAcitiviteAdminComponent},
 {path:"pwd",title:"Changer Mot de passe", component:ChangerPWDComponent},
 {path:"modifier/:id",title:"Modifier Act", component:ModifierComponent},
 {path:"ajouter",title:"Ajouter Act", component:AjouterComponent},

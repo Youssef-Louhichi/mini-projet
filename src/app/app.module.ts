@@ -23,6 +23,7 @@ import { BoiteComponent } from './composants/backOffice/boite/boite.component';
 import { ChangerUserNameComponent } from './composants/backOffice/changer-user-name/changer-user-name.component';
 import { AjouterMembreComponent } from './composants/backOffice/ajouter-membre/ajouter-membre.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +45,7 @@ import { AjouterMembreComponent } from './composants/backOffice/ajouter-membre/a
     BoiteComponent,
     ChangerUserNameComponent,
     AjouterMembreComponent,
+ 
   ],
   imports: [
     BrowserModule,

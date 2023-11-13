@@ -1,4 +1,15 @@
-{{li.id}}
-{{li.int}}
 
-<img [src]="li.photo">
+
+
+
+
+
+
+<div class="card" style="width:400px">
+    <img class="card-img-top" [src]="li.photo" alt="Card image">
+    <div class="card-body">
+      <h4 class="card-title">{{li.int}}</h4>
+      <p class="card-text">{{li.id}}</p>
+      <a [routerLink]="['/act',li.id]" routerLinkActive="active" class="btn btn-primary">details</a>
+    </div>
+  </div>
