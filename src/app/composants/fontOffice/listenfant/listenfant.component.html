@@ -10,8 +10,8 @@
     <img class="card-img-top" [src]="li.photo" alt="Card image">
     </div>
     <div class="card-body">
-      <h4 class="card-title">{{li.int}}</h4>
-      <p class="card-text">{{li.lieu}}</p>
+      <h4 class="card-title">{{li.int|titlecase}}</h4>
+      <p class="card-text">{{li.lieu|titlecase}}</p>
       <a [routerLink]="['/act',li.id]" routerLinkActive="active" class="btn btn-primary">Details</a>
     </div>
   </div>
