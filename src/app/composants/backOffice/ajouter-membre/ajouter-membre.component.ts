@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Activity } from 'src/app/classes/activity';
 import { MembreResponsable } from 'src/app/classes/membre-responsable';
@@ -14,12 +15,21 @@ export class AjouterMembreComponent implements OnInit {
 
 
 
-  constructor( private route: Router, private resService: MembersService,
+  constructor( private route: Router, private resService: MembersService,private formBuilder:FormBuilder,
     private actservice:ActivitiesService) { }
 
   lesresponsables: MembreResponsable[];
   newResponsable: MembreResponsable;
   lesactivitees:Activity[];
+
+  ajoutGroupMem:FormGroup = this.formBuilder.group(
+    {
+      nom: [''],
+      prenom :[''],
+      tel:['']
+
+    }
+  )
 
   ngOnInit(): void {
     this.resService.getMembers().subscribe(data => this.lesresponsables=data)
@@ -27,8 +37,14 @@ export class AjouterMembreComponent implements OnInit {
 
   }
 
-  onAjoute(nom: string, prenom: string, tel: string) {
+  onAjoute() {
+    let nom =this.ajoutGroupMem.get('nom').value;
+    let prenom =this.ajoutGroupMem.get('prenom').value;
+    let tel =this.ajoutGroupMem.get('tel').value
+
     if (tel.length==8 && !isNaN(Number(tel))) {
+
+
 
       
       this.newResponsable = new MembreResponsable(nom,prenom,tel)
@@ -41,7 +57,7 @@ export class AjouterMembreComponent implements OnInit {
         this.actservice.modifierService(e.id,e).subscribe()}
 
       })
-      this.route.navigate(['/admin/acts'])
+      this.route.navigate(['/admin/menu'])
     }
     else {
       alert("Numero telefone incorrecte")
@@ -50,7 +66,10 @@ export class AjouterMembreComponent implements OnInit {
 
 
 
-  test(nom: string, prenom: string, tel: string) {
+  test() {
+    let nom =this.ajoutGroupMem.get('nom').value;
+    let prenom =this.ajoutGroupMem.get('prenom').value;
+    let tel =this.ajoutGroupMem.get('tel').value
     if (nom == "" || prenom == "" || tel == "") {
       document.getElementById("butt").setAttribute("disabled", "true")
     }

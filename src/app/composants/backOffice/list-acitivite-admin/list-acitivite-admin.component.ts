@@ -14,8 +14,7 @@ export class ListAcitiviteAdminComponent implements OnInit {
   constructor(private activityservice: ActivitiesService, private route: Router, private serviceAuth: AuthService) { }
   activities: Activity[];
   activitiesAfficher: Activity[];
-  user: string
-
+  user: string;
 
   ngOnInit(): void {
     this.activityservice.getActs().subscribe( data => {this.activities = data
@@ -23,6 +22,7 @@ export class ListAcitiviteAdminComponent implements OnInit {
 
       );
     this.user = this.serviceAuth.getUser();
+
 
   }
 

@@ -3,6 +3,7 @@
 </a>
 
 <div class="container mt-3">
+    <h2>Filtrer:</h2>
     <div style="display: flex;justify-content: space-between;">
         <label>Identifiant de l'activitée:<input type="number" (change)="find(id.value)" class="form-control"
                 #id /></label>
@@ -36,7 +37,7 @@
         </thead>
         <tbody>
 
-            <tr *ngFor="let a of activitiesAfficher, index as i">
+            <tr *ngFor="let a of activitiesAfficher, index as i" >
                 <td><img [src]="a.photo" style="height: 40px;width: 40px;"></td>
                 <td>{{a.id}}</td>
                 <td>{{a.int}}</td>

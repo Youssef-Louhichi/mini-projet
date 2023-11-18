@@ -1,5 +1,7 @@
 <a routerLink="/admin/acts" class="btn btn-light"> <i class="fa-solid fa-arrow-left fa-xl"></i> </a>
 <div class="container">
+    <form action="" [formGroup]="modifierForm" (ngSubmit)="modifier()">
+
     <h1><strong>Modifier Activitée</strong></h1>
     
     <table class="table table-striped">
@@ -7,15 +9,15 @@
             <td>
                 <div class="mb-3 mt-3">
                     <label>ID:</label>
-                    <input type="number" class="form-control form-control-sm" [value]="act.id"
-                        (change)="test(id.value,int.value,date.value,lieu.value)" #id>
+                    <input type="number" class="form-control form-control-sm" formControlName="id"
+                        (change)="test()" >
                 </div>
             </td>
             <td>
                 <div class="mb-3 mt-3">
                     <label>Intulité:</label>
-                    <input type="text" class="form-control form-control-sm" [value]="act.int"
-                        (change)="test(id.value,int.value,date.value,lieu.value)" #int>
+                    <input type="text" class="form-control form-control-sm" formControlName="int"
+                        (change)="test()" >
                 </div>
             </td>
         </tr>
@@ -23,14 +25,14 @@
             <td>
                 <div class="mb-3 mt-3">
                     <label>photo:</label>
-                    <input type="file" class="form-control form-control-sm" #ph>
+                    <input type="file" class="form-control form-control-sm" formControlName="photo" >
                 </div>
             </td>
             <td>
                 <div class="mb-3 mt-3">
                     <label>Date:</label>
-                    <input type="date" class="form-control" [value]="act.date_act | date:'yyyy-MM-dd'"
-                        (change)="test(id.value,int.value,date.value,lieu.value)" #date>
+                    <input type="date" class="form-control" formControlName="date"
+                        (change)="test()" >
                 </div>
             </td>
         </tr>
@@ -38,7 +40,7 @@
             <td>
                 <div class="mb-3 mt-3">
                     <label>categorie:</label>
-                    <select class="form-control form-control-sm" [value]="act.categorie" #cat>
+                    <select class="form-control form-control-sm" formControlName="categorie" >
                         <option value="formation">Formation</option>
                         <option value="event">Evennement</option>
                         <option value="sortie">Sortie</option>
@@ -48,8 +50,8 @@
             <td>
                 <div class="mb-3 mt-3">
                     <label>Lieu:</label>
-                    <input type="text" class="form-control form-control-sm" [value]="act.lieu"
-                        (change)="test(id.value,int.value,date.value,lieu.value)" #lieu>
+                    <input type="text" class="form-control form-control-sm" formControlName="lieu"
+                        (change)="test()" >
                 </div>
             </td>
         </tr>
@@ -58,7 +60,7 @@
 
                 <div class="mb-3 mt-3">
                     <label>Prix:</label>
-                    <input type="number" class="form-control form-control-sm" [value]="act.prix" #prix>
+                    <input type="number" class="form-control form-control-sm" formControlName="prix" >
                 </div>
 
             </td>
@@ -68,8 +70,7 @@
                     <table class="table table-striped">
                         <tr>
                             <td><label>les places sont Limitées </label></td>
-                            <td><input type="radio" name="places" class="form-check-input" [checked]="act.limite" #ch>Oui</td>
-                            <td><input type="radio" name="places" class="form-check-input" [checked]="!act.limite">Non</td>
+                            <td><input type="checkbox" class="form-check-input" formControlName="limite" >Oui</td>
                         </tr>
                     </table>
                 </div>
@@ -77,8 +78,10 @@
             </td>
         </tr>
     </table>
-    <button (click)="modifier(id.value,int.value,ph.value,date.value,cat.value,lieu.value,prix.value,ch.checked)"
+    </form>
+    <button (click)="modifier()" type="submit"
         id="butt" class="btn btn-primary">
         Confirmer modification
     </button>
+    <button type="button" value="Effacer" (click)="onReset()" class="btn btn-secondary">Reset</button>
     <button (click)="Annuler()" class="btn btn-danger">Annuler</button>

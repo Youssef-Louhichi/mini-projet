@@ -1,6 +1,7 @@
 <a routerLink="/admin/menu" class="btn btn-light"> <i class="fa-solid fa-arrow-left fa-xl"></i>
     <div><i class="fa-solid fa-user"></i> {{user | titlecase}}</div>
 </a>
+<form [formGroup]="changerPwd">
 <table class=" mx-auto">
     <thead>
         <tr class="mb-2">
@@ -13,19 +14,20 @@
     <tbody>
         <tr>
             <td><strong>Ancien mot de passe </strong></td>
-            <td><input type="text" class="form-control" #pwd1></td>
+            <td><input type="text" class="form-control" formControlName="pwd1"></td>
         </tr>
         <tr>
             <td><strong> Mot de passe</strong></td>
-            <td><input type="password" class="form-control" #pwd2></td>
+            <td><input type="password" class="form-control" formControlName="pwd2"></td>
         </tr>
         <tr>
             <td><strong>Confirmer nouveau mot de passe</strong></td>
-            <td><input type="password" class="form-control" #pwd3></td>
+            <td><input type="password" class="form-control" formControlName="pwd3"></td>
         </tr>
         <tr class="mb-2">
-            <td><button (click)="onChange(pwd1.value,pwd2.value,pwd3.value)" class="btn btn-primary ">Changer</button>
+            <td><button (click)="onChange()" class="btn btn-primary ">Changer</button>
             </td>
         </tr>
     </tbody>
 </table>
+</form>

@@ -1,4 +1,3 @@
-
 {
   "activitees": [
     {
@@ -12,17 +11,20 @@
         {
           "nom": "Ben farah",
           "prenom": "Youssef",
-          "tel": "12345678"
+          "tel": "12345678",
+          "id": 1
         },
         {
           "nom": "Louhichi",
           "prenom": "Youssef",
-          "tel": "21287173"
+          "tel": "21287173",
+          "id": 2
         },
         {
           "nom": "Ben Mimoun",
           "prenom": "Aziz",
-          "tel": "12345678"
+          "tel": "12345678",
+          "id": 3
         }
       ],
       "prix": 10,
@@ -39,17 +41,20 @@
         {
           "nom": "Ben farah",
           "prenom": "Youssef",
-          "tel": "12345678"
+          "tel": "12345678",
+          "id": 1
         },
         {
           "nom": "Louhichi",
           "prenom": "Youssef",
-          "tel": "21287173"
+          "tel": "21287173",
+          "id": 2
         },
         {
           "nom": "Ben Mimoun",
           "prenom": "Aziz",
-          "tel": "12345678"
+          "tel": "12345678",
+          "id": 3
         }
       ],
       "prix": 15,
@@ -66,17 +71,20 @@
         {
           "nom": "Ben farah",
           "prenom": "Youssef",
-          "tel": "12345678"
+          "tel": "12345678",
+          "id": 1
         },
         {
           "nom": "Louhichi",
           "prenom": "Youssef",
-          "tel": "21287173"
+          "tel": "21287173",
+          "id": 2
         },
         {
           "nom": "Ben Mimoun",
           "prenom": "Aziz",
-          "tel": "12345678"
+          "tel": "12345678",
+          "id": 3
         }
       ],
       "prix": 0,
@@ -115,17 +123,20 @@
         {
           "nom": "Ben farah",
           "prenom": "Youssef",
-          "tel": "12345678"
+          "tel": "12345678",
+          "id": 1
         },
         {
           "nom": "Louhichi",
           "prenom": "Youssef",
-          "tel": "21287173"
+          "tel": "21287173",
+          "id": 2
         },
         {
           "nom": "Ben Mimoun",
           "prenom": "Aziz",
-          "tel": "12345678"
+          "tel": "12345678",
+          "id": 3
         }
       ],
       "prix": 10,
@@ -142,17 +153,20 @@
         {
           "nom": "Ben farah",
           "prenom": "Youssef",
-          "tel": "12345678"
+          "tel": "12345678",
+          "id": 1
         },
         {
           "nom": "Louhichi",
           "prenom": "Youssef",
-          "tel": "21287173"
+          "tel": "21287173",
+          "id": 2
         },
         {
           "nom": "Ben Mimoun",
           "prenom": "Aziz",
-          "tel": "12345678"
+          "tel": "12345678",
+          "id": 3
         }
       ],
       "prix": 35,
@@ -161,22 +175,22 @@
   ],
   "membres": [
     {
-      "id": 1,
+      "prenom": "Youssef",
       "nom": "Ben farah",
-      "prenom": "Youssef",
-      "tel": "12345678"
+      "tel": "12345678",
+      "id": 1
     },
     {
-      "id": 2,
+      "prenom": "Youssef",
       "nom": "Louhichi",
-      "prenom": "Youssef",
-      "tel": "21287173"
+      "tel": "21287173",
+      "id": 2
     },
     {
-      "id": 3,
-      "nom": "Ben Mimoun",
       "prenom": "Aziz",
-      "tel": "12345678"
+      "nom": "Ben Mimoun",
+      "tel": "12345678",
+      "id": 3
     }
   ],
   "suggestions": [
@@ -198,5 +212,9 @@
       "mail": "'espere que vous organisez Watch party pour les film de disney",
       "date_post": "11-25-2023"
     }
-  ]
+  ],
+  "admin": {
+    "username": "Youssef",
+    "pwd": "Youssef"
+  }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Activity } from 'src/app/classes/activity';
 import { MembreResponsable } from 'src/app/classes/membre-responsable';
@@ -13,19 +14,47 @@ import { MembersService } from 'src/app/services/members.service';
 export class AjouterComponent implements OnInit{
 
 
-  constructor(private actService: ActivitiesService, private route: Router, private resService: MembersService) { }
+  constructor(private actService: ActivitiesService, private route: Router, private resService: MembersService,
+    private formBuilder:FormBuilder) { }
 
   lesresponsables: MembreResponsable[];
   tab: MembreResponsable[] = [];
   lesactivitees: Activity[];
 
+  ajoutGroupAct:FormGroup = this.formBuilder.group(
+    {
+      id: [],
+      int :[''],
+      photo:[''],
+      date:[''],
+      lieu:[''],
+      prix:[],
+      categorie:['formation'],
+      limite:[]
+
+    }
+  )
+
   ngOnInit(): void {
     this.actService.getActs().subscribe( data => this.lesactivitees = data);
     this.resService.getMembers().subscribe(data => this.lesresponsables=data);
+
+   
   }
 
 
-  onAjoute(id: string, int: string, ph: string, date: string, cat: string, lieu: string, prix: string, lim: boolean) {
+  onAjoute() {
+    let id =this.ajoutGroupAct.get('id').value;
+    let int =this.ajoutGroupAct.get('int').value;
+    let ph =this.ajoutGroupAct.get('photo').value;
+    let date =this.ajoutGroupAct.get('date').value;
+    let prix =this.ajoutGroupAct.get('prix').value;
+    let cat =this.ajoutGroupAct.get('categorie').value;
+    let lieu =this.ajoutGroupAct.get('lieu').value;
+    let lim =this.ajoutGroupAct.get('limite').value;
+
+    
+
     if (!this.lesactivitees.find(e => e.id == Number(id))) {
 
       if (ph == "") {
@@ -48,7 +77,19 @@ export class AjouterComponent implements OnInit{
     }
   }
 
-  test(id: string, int: string, date: string, lieu: string) {
+
+  onReset(){
+    this.ajoutGroupAct.reset();
+  }
+
+
+  test() {
+    let id =this.ajoutGroupAct.get('id').value;
+    let int =this.ajoutGroupAct.get('int').value;
+    let lieu =this.ajoutGroupAct.get('lieu').value;
+    let date =this.ajoutGroupAct.get('date').value;
+
+
     if (id == "" || int == "" || date == "" || lieu == "") {
       document.getElementById("butt").setAttribute("disabled", "true")
     }

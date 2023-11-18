@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -9,12 +10,19 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class ChangerUserNameComponent {
   
-  constructor(private auth: AuthService, private route: Router) { }
+  constructor(private auth: AuthService, private route: Router,private formBuilder:FormBuilder ) { }
 
   user: string = this.auth.getUser();
 
+  changerUser:FormGroup=this.formBuilder.group({
+    u:[''],
+    pwd:['']
+  })
 
-  onChange(u: string, pwd: string) {
+
+  onChange() {
+    let u =this.changerUser.get('u').value;
+    let pwd =this.changerUser.get('pwd').value;
     if (this.auth.changerU(u, pwd)) {
       alert("User Name changer avec succes!")
       this.route.navigate(['/admin/menu'])
