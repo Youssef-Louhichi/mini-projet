@@ -22,6 +22,7 @@ import { ListenfantComponent } from './composants/fontOffice/listenfant/listenfa
 import { BoiteComponent } from './composants/backOffice/boite/boite.component';
 import { ChangerUserNameComponent } from './composants/backOffice/changer-user-name/changer-user-name.component';
 import { AjouterMembreComponent } from './composants/backOffice/ajouter-membre/ajouter-membre.component';
+import { AjouterSuggestionComponent } from './composants/fontOffice/ajouter-suggestion/ajouter-suggestion.component';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { AjouterMembreComponent } from './composants/backOffice/ajouter-membre/a
     BoiteComponent,
     ChangerUserNameComponent,
     AjouterMembreComponent,
+    AjouterSuggestionComponent,
  
   ],
   imports: [

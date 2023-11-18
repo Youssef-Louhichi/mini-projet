@@ -1,83 +1,57 @@
 <a routerLink="/admin/acts" class="btn btn-light"> <i class="fa-solid fa-arrow-left fa-xl"></i> </a>
 <div class="container">
-    <form action="" [formGroup]="modifierForm" (ngSubmit)="modifier()">
+    <form action="" [formGroup]="modifierForm" (ngSubmit)="modifier()" class="row g-3">
 
     <h1><strong>Modifier Activitée</strong></h1>
     
-    <table class="table table-striped">
-        <tr>
-            <td>
-                <div class="mb-3 mt-3">
+                <div class="col-md-6">
                     <label>ID:</label>
                     <input type="number" class="form-control form-control-sm" formControlName="id"
                         (change)="test()" >
                 </div>
-            </td>
-            <td>
-                <div class="mb-3 mt-3">
+                <div class="col-md-6">
                     <label>Intulité:</label>
                     <input type="text" class="form-control form-control-sm" formControlName="int"
                         (change)="test()" >
                 </div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div class="mb-3 mt-3">
+                <div class="col-md-6">
                     <label>photo:</label>
                     <input type="file" class="form-control form-control-sm" formControlName="photo" >
                 </div>
-            </td>
-            <td>
-                <div class="mb-3 mt-3">
+                <div class="col-md-6">
                     <label>Date:</label>
                     <input type="date" class="form-control" formControlName="date"
                         (change)="test()" >
                 </div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div class="mb-3 mt-3">
+                <div class="col-md-6">
                     <label>categorie:</label>
-                    <select class="form-control form-control-sm" formControlName="categorie" >
+                    <select class="form-select form-control-sm" formControlName="categorie" >
                         <option value="formation">Formation</option>
                         <option value="event">Evennement</option>
                         <option value="sortie">Sortie</option>
                     </select>
+                </div>            
+                <div class="col-md-6">
+                    <label>Prix:</label>
+                    <input type="number" class="form-control form-control-sm" formControlName="prix" >
+                   
                 </div>
-            </td>
-            <td>
-                <div class="mb-3 mt-3">
+
+                <div class="col-md-12">
                     <label>Lieu:</label>
                     <input type="text" class="form-control form-control-sm" formControlName="lieu"
                         (change)="test()" >
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-
-                <div class="mb-3 mt-3">
-                    <label>Prix:</label>
-                    <input type="number" class="form-control form-control-sm" formControlName="prix" >
+                   
                 </div>
 
-            </td>
-            <td>
 
-                <div class="mb-3 mt-3">
-                    <table class="table table-striped">
-                        <tr>
-                            <td><label>les places sont Limitées </label></td>
-                            <td><input type="checkbox" class="form-check-input" formControlName="limite" >Oui</td>
-                        </tr>
-                    </table>
+                <div class="col-md-12">
+                    <div class="form-check">
+                        <label>les places sont Limitées </label>
+                        <input type="checkbox" class="form-check-input" formControlName="limite">
+                    </div>
                 </div>
 
-            </td>
-        </tr>
-    </table>
     </form>
     <button (click)="modifier()" type="submit"
         id="butt" class="btn btn-primary">

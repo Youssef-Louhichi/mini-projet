@@ -5,11 +5,13 @@
 
 
 
-<div class="card" style="width:400px">
+<div class="card w-100" style="width:400px">
+  <div class="card-head">
     <img class="card-img-top" [src]="li.photo" alt="Card image">
+    </div>
     <div class="card-body">
       <h4 class="card-title">{{li.int}}</h4>
-      <p class="card-text">{{li.id}}</p>
-      <a [routerLink]="['/act',li.id]" routerLinkActive="active" class="btn btn-primary">details</a>
+      <p class="card-text">{{li.lieu}}</p>
+      <a [routerLink]="['/act',li.id]" routerLinkActive="active" class="btn btn-primary">Details</a>
     </div>
   </div>

@@ -1,93 +1,58 @@
 <a routerLink="/admin/acts" class="btn btn-light"> <i class="fa-solid fa-arrow-left fa-xl"></i> </a>
 <div class="container">
-    <form action="" [formGroup]="ajoutGroupAct" (ngSubmit)="onAjoute()">
+    <form action="" [formGroup]="ajoutGroupAct" (ngSubmit)="onAjoute()" class="row g-3">
 
-    <h1><strong>Ajouter Activitée</strong></h1>
-    <table class="table table-striped" >
-        <tr>
-            <td>
-                <div class="mb-3 mt-3">
-                    <label>ID:</label>
-                    <input type="number" class="form-control form-control-sm" formControlName="id"
-                        (change)="test()" #id>
-                </div>
-            </td>
-            <td>
-                <div class="mb-3 mt-3">
-                    <label>Intulité:</label>
-                    <input type="text" class="form-control form-control-sm" formControlName="int"
-                        (change)="test()" #int>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div class="mb-3 mt-3">
-                    <label>photo:</label>
-                    <input type="file" class="form-control form-control-sm" formControlName="photo" #ph>
-                </div>
-            </td>
-            <td>
-                <div class="mb-3 mt-3">
-                    <label>Date:</label>
-                    <input type="date" class="form-control form-control-sm"
-                        (change)="test()" formControlName="date" #date>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div class="mb-3 mt-3">
-                    <label>categorie:</label>
-                    <select class="form-control form-control-sm" formControlName="categorie" #cat>
-                        <option value="formation" selected>Formation</option>
-                        <option value="event">Evennement</option>
-                        <option value="sortie">Sortie</option>
-                    </select>
-                </div>
-            </td>
-            <td>
-                <div class="mb-3 mt-3">
-                    <label>Lieu:</label>
-                    <input type="text" class="form-control form-control-sm" formControlName="lieu"
-                        (change)="test()" #lieu>
-                </div>
-            </td>
-        </tr>
+        <h1><strong>Ajouter Activitée</strong></h1>
+        <div class="col-md-6">
+            <label>ID:</label>
+            <input type="number" class="form-control form-control-sm" formControlName="id" (change)="test()" #id>
+        </div>
+        <div class="col-md-6">
+            <label>Intulité:</label>
+            <input type="text" class="form-control form-control-sm" formControlName="int" (change)="test()" #int>
+        </div>
+        <div class="col-md-6">
+            <label>photo:</label>
+            <input type="file" class="form-control form-control-sm" formControlName="photo" #ph>
+        </div>
+        <div class="col-md-6">
+            <label>Date:</label>
+            <input type="date" class="form-control form-control-sm" (change)="test()" formControlName="date" #date>
+        </div>
+        <div class="col-md-6">
+            <label>categorie:</label>
+            <select class="form-select form-select-sm" formControlName="categorie">
+                <option value="formation" selected>Formation</option>
+                <option value="event">Evennement</option>
+                <option value="sortie">Sortie</option>
+            </select>
+            </div>
+            <div class="col-md-6">
+                <label>Prix:</label>
+                <input type="number" class="form-control form-control-sm" formControlName="prix">
 
-        <tr>
-            <td>
+            </div>
 
-                <div class="mb-3 mt-3">
-                    <label>Prix:</label>
-                    <input type="number" class="form-control form-control-sm" formControlName="prix" #prix>
+
+            <div class="col-md-12">
+                <label>Lieu:</label>
+                <input type="text" class="form-control form-control-sm" formControlName="lieu" (change)="test()">
+
+            </div>
+            <div class="col-md-12">
+                <div class="form-check">
+                    <label>les places sont Limitées </label>
+                    <input type="checkbox" class="form-check-input" formControlName="limite">
                 </div>
-            </td>
-            <td>
-                <div class="mb-3 mt-3">
-                    <table class="table table-striped">
-                        <tr>
-                            <td>
-                                <label>les places sont Limitées </label>
-                            </td>
-                            <td>
-                                <input type="checkbox" class="form-check-input" formControlName="limite" >Oui
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </td>
-        </tr>
-    </table>
+            </div>
 
 
 
 
 
-    <button class="btn btn-primary" type="submit" id="butt" disabled >Ajouter</button>
-    <button type="button" value="Effacer" (click)="onReset()" class="btn btn-secondary">Reset</button>
-</form>
+            <button class="btn btn-primary" type="submit" id="butt" disabled>Ajouter</button>
+            <button type="button" value="Effacer" (click)="onReset()" class="btn btn-secondary">Reset</button>
+    </form>
 
 
 </div>
-

@@ -1,14 +1,22 @@
+<section class="py-3 py-md-5 py-xl-8">
+
 <a routerLink="/home"><i class="fa-solid fa-house fa-xl" style="color:#101e38 ;"></i></a>
 <div class="container">
+
+<form [formGroup]="logGroup" class="row g-3" (ngSubmit)="onLogin()">
+
         <h1>Authentification</h1>
-            <div class="mb-3 mt-3">
+            <div class="col-md-6">
               <label  class="form-label">Nom d'utilisateur:</label>
-              <input type="text" class="form-control" placeholder="Introduisez votre nom d'utilisateur" #u>
+              <input type="text" class="form-control" placeholder="Introduisez votre nom d'utilisateur" formControlName="u">
             </div>
-            <div class="mb-3">
+            <div class="col-md-6">
               <label class="form-label">Password:</label>
-              <input type="password" class="form-control" placeholder="Introduisez votre mot de passe " #p>
+              <input type="password" class="form-control" placeholder="Introduisez votre mot de passe " formControlName="pwd">
             </div>
-            <button type="button" class="btn btn-primary" (click)="onLogin(u.value,p.value)">S'authentifier</button>
+            <button type="button" class="btn btn-primary" type="submit">S'authentifier</button>
        
-    </div>
+   
+    </form>
+  </div>
+    </section>

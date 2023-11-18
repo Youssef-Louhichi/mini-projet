@@ -2,9 +2,11 @@
     <div class="card-body">
     <label>identifiant :</label><h4 class="card-title">{{act.id}}</h4>
      <label>intitule :</label> <p class="card-text">{{act.int}}</p>
-     <label>date :</label><p class="card-text">{{act.date_act}}</p>
+     <label>date :</label><p class="card-text">{{act.date_act|date:'longDate'}}</p>
      <label>categorie :</label><p class="card-text">{{act.categorie}}</p>
-     <label>prix :</label><p class="card-text">{{act.prix}}TND</p>
+     <label><span *ngIf="act.prix != 0 ; else gratuit" class="badge rounded-pill  bg-dark">
+      <i class="fa-solid fa-coins"></i>prix :{{act.prix}}DT</span><ng-template
+          #gratuit >Gratuit</ng-template></label>
     </div>
   </div>
 

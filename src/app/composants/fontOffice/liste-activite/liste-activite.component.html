@@ -1,10 +1,13 @@
 <div class="container mt-3">
-    <select (change)="filtre1(cat.value)" #cat>
+    <div class="col-md-4">
+
+    <select (change)="filtre1(cat.value)" #cat class="form-select">
         <option value="formation">Formation</option>
         <option value="event">Evennement</option>
         <option value="sortie">Sortie</option>
         <option value="" selected>tout</option>
     </select>
+    </div>
         <div class="row" >
             
                 <div *ngFor="let a of activitiesAfficher" class="col-md-4" >

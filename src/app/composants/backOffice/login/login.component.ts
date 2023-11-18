@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -9,9 +10,16 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginComponent {
 
-  constructor(private auth:AuthService,private route:Router){}
+  constructor(private auth:AuthService,private route:Router,private formBuilder:FormBuilder){}
 
-  onLogin(username:string,pwd:string){
+  logGroup:FormGroup=this.formBuilder.group({
+    u:[''],
+    pwd:['']
+  })
+
+  onLogin(){
+    let username =this.logGroup.get('u').value;
+    let pwd =this.logGroup.get('pwd').value;
     if(this.auth.login(username,pwd)){
       this.route.navigate(['/admin'])
     }

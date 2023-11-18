@@ -17,6 +17,7 @@ import { AjouterComponent } from './composants/backOffice/ajouter/ajouter.compon
 import { BoiteComponent } from './composants/backOffice/boite/boite.component';
 import { ChangerUserNameComponent } from './composants/backOffice/changer-user-name/changer-user-name.component';
 import { AjouterMembreComponent } from './composants/backOffice/ajouter-membre/ajouter-membre.component';
+import { AjouterSuggestionComponent } from './composants/fontOffice/ajouter-suggestion/ajouter-suggestion.component';
 
 const routes: Routes = [
 
@@ -25,6 +26,8 @@ const routes: Routes = [
 {path:"act/:id",title:"Activitée",component:ActiviteSelectedComponent},
 {path:"aboutus",title:"About Us", component:AboutUsComponent},
 {path:"pub",title:"Movies",component:PubComponent},
+{path:"sug",title:"Suggestion", component:AjouterSuggestionComponent},
+
 {path:"",redirectTo:"home",pathMatch:"full"}
 ]
 },
