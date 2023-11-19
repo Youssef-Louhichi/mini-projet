@@ -1,17 +1,17 @@
-<section class="py-3 py-md-5 py-xl-8">
+<section class="py-3 py-md-5 py-xl-8  hero" style="background-image: url('assets/banner.jpg');">
 
-<a routerLink="/home"><i class="fa-solid fa-house fa-xl" style="color:#101e38 ;"></i></a>
+<a routerLink="/home"><i class="fa-solid fa-house fa-xl" style="color:#ffff ;"></i></a>
 <div class="container">
 
 <form [formGroup]="logGroup" class="row g-3" (ngSubmit)="onLogin()">
 
-        <h1>Authentification</h1>
+        <h1 style="color: #ffff;">Authentification</h1>
             <div class="col-md-6">
-              <label  class="form-label">Nom d'utilisateur:</label>
+              <label  class="form-label" style="color:#ffff ;">Nom d'utilisateur:</label>
               <input type="text" class="form-control" placeholder="Introduisez votre nom d'utilisateur" formControlName="u">
             </div>
             <div class="col-md-6">
-              <label class="form-label">Password:</label>
+              <label class="form-label" style="color:#ffff ;">Password:</label>
               <input type="password" class="form-control" placeholder="Introduisez votre mot de passe " formControlName="pwd">
             </div>
             <button type="button" class="btn btn-primary" type="submit">S'authentifier</button>

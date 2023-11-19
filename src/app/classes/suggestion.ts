@@ -8,7 +8,7 @@ export class Suggestion {
     private getId(): number {
         let id:number;
         if(localStorage.getItem('IdS') == null){
-             id=4;
+             id=1;
         }
         else{
           id = Number(localStorage.getItem('IdS'));
