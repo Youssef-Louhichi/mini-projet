@@ -1,0 +1,44 @@
+<a routerLink="/admin/menu" class="btn btn-light"> <i class="fa-solid fa-arrow-left fa-xl"></i>
+    <div><i class="fa-solid fa-user"></i> {{user | titlecase}}</div>
+</a>
+
+<div class="container mt-3">
+    <h1>Les membre responsables</h1>
+
+    <div class="row">
+
+        <div *ngFor="let r of lesresponsables,index as i" class="col-md-3" style="padding: 10px;">
+            <div class="card w-100" style="width:400px">
+
+                <div class="card-head">
+                    <button class="btn btn-danger rounded-pill" (click)="supprimer(r.id,i)"
+                        style="float: right;">X</button>
+
+                    <img class="card-img-top" src="assets/membre.jpg" alt="Card image">
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">{{r.nom|uppercase}} {{r.prenom|titlecase}}</h4>
+                    <p class="card-text">{{r.tel}}</p>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-md-3" style="padding: 10px;">
+
+            <button (click)="goAjouter()" class="btn rounded-pill">
+
+
+                <img class="card-img-top" src="assets/add.png" >
+
+
+
+            </button>
+
+
+
+        </div>
+
+
+
+    </div>

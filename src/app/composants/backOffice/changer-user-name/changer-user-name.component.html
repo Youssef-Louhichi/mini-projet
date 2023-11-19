@@ -1,29 +1,22 @@
 <a routerLink="/admin/menu" class="btn btn-light"> <i class="fa-solid fa-arrow-left fa-xl"></i>
     <div><i class="fa-solid fa-user"></i> {{user | titlecase}}</div>
 </a>
-<form [formGroup]="changerUser">
-<table class=" mx-auto">
-    <thead>
-        <tr class="mb-2">
-            <th>
-                <h1><strong>Changer Admin User Name</strong></h1>
-            </th>
-        </tr>
-    </thead>
+<section class="py-3 py-md-5 py-xl-8">
 
-    <tbody>
-        <tr>
-            <td><strong>Nouveau nom d'utulisateur </strong></td>
-            <td><input type="text" class="form-control" formControlName="u"></td>
-        </tr>
-        <tr>
-            <td><strong> Mot de passe</strong></td>
-            <td><input type="password" class="form-control" formControlName="pwd"></td>
-        </tr>
-        <tr class="mb-2">
-            <td><button (click)="onChange()" class="btn btn-primary ">Changer</button>
-            </td>
-        </tr>
-    </tbody>
-</table>
+<div class="container">
+<form [formGroup]="changerUser" class="row g-3" (ngSubmit)="onChange()">
+                <h1><strong>Changer Admin User Name</strong></h1>
+                <div class="col-md-6">
+
+            <strong>Nouveau nom d'utulisateur </strong>
+            <input type="text" class="form-control" formControlName="u">
+            </div>
+            <div class="col-md-6">
+
+            <strong> Mot de passe</strong>
+            <input type="password" class="form-control" formControlName="pwd">
+            </div>
+            <button class="btn btn-primary ">Changer</button>
 </form>
+</div>
+</section>

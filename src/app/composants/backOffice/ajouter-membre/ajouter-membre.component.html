@@ -1,37 +1,28 @@
-<a routerLink="/admin/menu" class="btn btn-light"> <i class="fa-solid fa-arrow-left fa-xl"></i> </a>
+<a routerLink="/admin/consRes" class="btn btn-light"> <i class="fa-solid fa-arrow-left fa-xl"></i> </a>
+<section class="py-3 py-md-5 py-xl-8">
 <div class="container">
     <h1><strong>Ajouter Mmebre Responsable</strong></h1>
-    <form [formGroup]="ajoutGroupMem">
-    <table class="table table-striped">
-        <tr>
-            <td>
-                <div class="mb-3 mt-3">
+    <form [formGroup]="ajoutGroupMem" class="row g-3">
+                <div class="col-md-6">
                     <label>Nom:</label>
                     <input type="text" class="form-control form-control-sm"
                         (change)="test()" formControlName="nom">
                 </div>
-            </td>
-            <td>
-                <div class="mb-3 mt-3">
+                <div class="col-md-6">
                     <label>Prenom:</label>
                     <input type="text" class="form-control form-control-sm"
                         (change)="test()" formControlName="prenom">
                 </div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div class="mb-3 mt-3">
+                <div class="col-md-6">
                     <label>Numero telephone:</label>
                     <input type="text" class="form-control form-control-sm" 
                         (change)="test()" formControlName="tel">
                 </div>
-            </td>
-        </tr>
-    </table>
+                <button class="btn btn-primary" id="butt" disabled
+(click)="onAjoute()">Ajouter</button>
     </form>
 </div>
+</section>
 
 
-<button class="btn btn-primary" id="butt" disabled
-(click)="onAjoute()">Ajouter</button>
+

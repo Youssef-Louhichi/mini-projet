@@ -1,33 +1,29 @@
 <a routerLink="/admin/menu" class="btn btn-light"> <i class="fa-solid fa-arrow-left fa-xl"></i>
     <div><i class="fa-solid fa-user"></i> {{user | titlecase}}</div>
 </a>
-<form [formGroup]="changerPwd">
-<table class=" mx-auto">
-    <thead>
-        <tr class="mb-2">
-            <th>
-                <h1><strong>Changer Votre Mot de Passe</strong></h1>
-            </th>
-        </tr>
-    </thead>
 
-    <tbody>
-        <tr>
-            <td><strong>Ancien mot de passe </strong></td>
-            <td><input type="text" class="form-control" formControlName="pwd1"></td>
-        </tr>
-        <tr>
-            <td><strong> Mot de passe</strong></td>
-            <td><input type="password" class="form-control" formControlName="pwd2"></td>
-        </tr>
-        <tr>
-            <td><strong>Confirmer nouveau mot de passe</strong></td>
-            <td><input type="password" class="form-control" formControlName="pwd3"></td>
-        </tr>
-        <tr class="mb-2">
-            <td><button (click)="onChange()" class="btn btn-primary ">Changer</button>
-            </td>
-        </tr>
-    </tbody>
-</table>
+<section class="py-3 py-md-5 py-xl-8">
+
+
+<div class="container">
+<form [formGroup]="changerPwd" class="row g-3" (ngSubmit)="onChange()">
+                <h1><strong>Changer Votre Mot de Passe</strong></h1>
+                <div class="col-md-6">
+
+            <strong>Ancien mot de passe </strong>
+            <input type="text" class="form-control" formControlName="pwd1">
+            </div>
+            <div class="col-md-6">
+
+            <strong> Mot de passe</strong>
+            <input type="password" class="form-control" formControlName="pwd2">
+            </div>
+            <div class="col-md-6">
+
+            <strong>Confirmer nouveau mot de passe</strong>
+            <input type="password" class="form-control" formControlName="pwd3">
+            </div>
+            <button class="btn btn-primary ">Changer</button>
 </form>
+</div>
+</section>

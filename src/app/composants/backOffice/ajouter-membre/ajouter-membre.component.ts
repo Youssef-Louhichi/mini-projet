@@ -57,7 +57,7 @@ export class AjouterMembreComponent implements OnInit {
         this.actservice.modifierService(e.id,e).subscribe()}
 
       })
-      this.route.navigate(['/admin/menu'])
+      this.route.navigate(['/admin/consRes'])
     }
     else {
       alert("Numero telefone incorrecte")

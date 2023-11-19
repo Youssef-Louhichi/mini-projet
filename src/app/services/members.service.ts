@@ -22,4 +22,10 @@ export class MembersService {
     return this.http.post<MembreResponsable>(URL,a);  
   }
 
+  public supprimerRes(id: number){
+    
+    return this.http.delete(URL+"/"+ id);
+
+  }
+
 }
