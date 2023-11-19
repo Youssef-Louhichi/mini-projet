@@ -22,31 +22,16 @@ import { ConsulterMembreComponent } from './composants/backOffice/consulter-memb
 
 const routes: Routes = [
 
-  {path:"",component:DashComponent, children:
-[{path:"home",title:"Home",component:ListeActiviteComponent},
-{path:"act/:id",title:"Activitée",component:ActiviteSelectedComponent},
-{path:"aboutus",title:"About Us", component:AboutUsComponent},
-{path:"pub",title:"Movies",component:PubComponent},
-{path:"sug",title:"Suggestion", component:AjouterSuggestionComponent},
+  {path:"",component:DashComponent, loadChildren: () =>import('./modules/front/front.module').then(
+    m => m.FrontModule)
 
-{path:"",redirectTo:"home",pathMatch:"full"}
-]
 },
 
 {path:"login",title:"Authentification",component:LoginComponent},
 
-{path:"admin",component:DashAdminComponent, canActivate:[adminGuard] ,children:
-[{path:"menu",title:"Welcome Admin",component:AdminMenuComponent},
-{path:"acts",title:"List Activity",component:ListAcitiviteAdminComponent},
-{path:"pwd",title:"Changer Mot de passe", component:ChangerPWDComponent},
-{path:"modifier/:id",title:"Modifier Act", component:ModifierComponent},
-{path:"ajouter",title:"Ajouter Act", component:AjouterComponent},
-{path:"boite",title:"Boite des suggestions", component:BoiteComponent},
-{path:"user",title:"Changer User Name", component:ChangerUserNameComponent},
-{path:"ajouterRes",title:"Ajouter Res", component:AjouterMembreComponent},
-{path:"consRes",title:"Consulter Res", component:ConsulterMembreComponent},
-{path:"",redirectTo:"menu",pathMatch:"full"}
-]
+{path:"admin",component:DashAdminComponent, canActivate:[adminGuard] ,loadChildren: () =>import('./modules/admin/admin.module').then(
+  m => m.AdminModule)
+
 },
 
 {path:"**",title:"Erreur",component:ErreurComponent}
