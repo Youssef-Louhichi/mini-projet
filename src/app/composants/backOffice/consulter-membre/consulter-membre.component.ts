@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Activity } from 'src/app/classes/activity';
 import { MembreResponsable } from 'src/app/classes/membre-responsable';
 import { ActivitiesService } from 'src/app/services/activities.service';
-import { AuthService } from 'src/app/services/auth.service';
+import { AdminService } from 'src/app/services/admin.service';
 import { MembersService } from 'src/app/services/members.service';
 
 @Component({
@@ -13,7 +13,7 @@ import { MembersService } from 'src/app/services/members.service';
 })
 export class ConsulterMembreComponent implements OnInit{
 
-  constructor( private route: Router, private serviceAuth: AuthService,private serviceMembre:MembersService, private actservice:ActivitiesService) { }
+  constructor( private route: Router, private adService: AdminService,private serviceMembre:MembersService, private actservice:ActivitiesService) { }
   lesresponsables: MembreResponsable[];
   lesactivitees:Activity[];
   user: string;
@@ -23,7 +23,7 @@ export class ConsulterMembreComponent implements OnInit{
     this.serviceMembre.getMembers().subscribe(data => this.lesresponsables=data);
     this.actservice.getActs().subscribe(data => this.lesactivitees=data)
 
-    this.user = this.serviceAuth.getUser();
+    this.adService.getAdmin().subscribe(data => this.user=data.username)
 
 
   }

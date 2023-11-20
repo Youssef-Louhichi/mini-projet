@@ -8,17 +8,17 @@
 <div class="container">
 <form [formGroup]="changerPwd" class="row g-3" (ngSubmit)="onChange()">
                 <h1><strong>Changer Votre Mot de Passe</strong></h1>
-                <div class="col-md-6">
+                <div class="col-md-12">
 
             <strong>Ancien mot de passe </strong>
-            <input type="text" class="form-control" formControlName="pwd1">
+            <input type="password" class="form-control" formControlName="pwd1">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-12">
 
-            <strong> Mot de passe</strong>
+            <strong>Nouveau mot de passe</strong>
             <input type="password" class="form-control" formControlName="pwd2">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-12">
 
             <strong>Confirmer nouveau mot de passe</strong>
             <input type="password" class="form-control" formControlName="pwd3">

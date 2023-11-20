@@ -198,27 +198,26 @@
       "id": "0",
       "nom": "3ammar",
       "mail": "3ammar0@gmail.com",
-      "sugg":"J'espere que vous organisez Watch party pour les film de marvel et dc",
+      "sugg": "J'espere que vous organisez Watch party pour les film de marvel et dc",
       "date_post": "2023-11-5"
     },
     {
       "id": "1",
       "nom": "3ammar",
       "mail": "3ammar0@gmail.com",
-      "sugg":"J'espere que vous organisez Watch party pour les film de marvel et dc",
+      "sugg": "J'espere que vous organisez Watch party pour les film de marvel et dc",
       "date_post": "2023-11-12"
     },
     {
       "id": "2",
       "nom": "3ammar",
       "mail": "3ammar0@gmail.com",
-      "sugg":"J'espere que vous organisez Watch party pour les film de marvel et dc",
+      "sugg": "J'espere que vous organisez Watch party pour les film de marvel et dc",
       "date_post": "2023-11-25"
     }
-    
   ],
   "admin": {
-    "username": "Youssef",
-    "pwd": "Youssef"
+    "username": "youssef",
+    "pwd": "ahmed"
   }
 }

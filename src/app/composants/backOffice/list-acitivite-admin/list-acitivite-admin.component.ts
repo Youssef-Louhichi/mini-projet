@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Activity } from 'src/app/classes/activity';
 import { ActivitiesService } from 'src/app/services/activities.service';
-import { AuthService } from 'src/app/services/auth.service';
+import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
   selector: 'app-list-acitivite-admin',
@@ -11,7 +11,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./list-acitivite-admin.component.css']
 })
 export class ListAcitiviteAdminComponent implements OnInit {
-  constructor(private activityservice: ActivitiesService, private route: Router, private serviceAuth: AuthService) { }
+  constructor(private activityservice: ActivitiesService, private route: Router, private adService: AdminService) { }
   activities: Activity[];
   activitiesAfficher: Activity[];
   user: string;
@@ -21,7 +21,8 @@ export class ListAcitiviteAdminComponent implements OnInit {
       this.activitiesAfficher=this.activities}
 
       );
-    this.user = this.serviceAuth.getUser();
+      this.adService.getAdmin().subscribe(data => this.user=data.username)
+
 
 
   }

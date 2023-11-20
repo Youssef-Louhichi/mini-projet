@@ -22,21 +22,23 @@ export class ModifierComponent implements OnInit {
   act: Activity;
   idInit: number;
   lesresponsables: MembreResponsable[];
-  modifierForm:FormGroup= this.formBuilder.group(
-    {
-      id: [],
-      int :[],
-      photo:[''],
-      date:[],
-      lieu:[],
-      prix:[],
-      categorie:[],
-      limite:[],
-
-    }
-  );
+  modifierForm:FormGroup
 
   ngOnInit(): void {
+
+    this.modifierForm= this.formBuilder.group(
+      {
+        id: [],
+        int :[],
+        photo:[''],
+        date:[],
+        lieu:[],
+        prix:[],
+        categorie:[],
+        limite:[],
+  
+      }
+    );
     
       
 

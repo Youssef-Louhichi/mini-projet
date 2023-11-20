@@ -22,18 +22,19 @@ export class AjouterMembreComponent implements OnInit {
   newResponsable: MembreResponsable;
   lesactivitees:Activity[];
 
-  ajoutGroupMem:FormGroup = this.formBuilder.group(
-    {
-      nom: [''],
-      prenom :[''],
-      tel:['']
-
-    }
-  )
+  ajoutGroupMem:FormGroup 
 
   ngOnInit(): void {
     this.resService.getMembers().subscribe(data => this.lesresponsables=data)
     this.actservice.getActs().subscribe(data => this.lesactivitees=data)
+    this.ajoutGroupMem= this.formBuilder.group(
+      {
+        nom: [''],
+        prenom :[''],
+        tel:['']
+  
+      }
+    )
 
   }
 

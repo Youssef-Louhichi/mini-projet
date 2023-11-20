@@ -21,24 +21,24 @@ export class AjouterComponent implements OnInit{
   tab: MembreResponsable[] = [];
   lesactivitees: Activity[];
 
-  ajoutGroupAct:FormGroup = this.formBuilder.group(
-    {
-      id: [],
-      int :[''],
-      photo:[''],
-      date:[''],
-      lieu:[''],
-      prix:[],
-      categorie:['formation'],
-      limite:[]
-
-    }
-  )
+  ajoutGroupAct:FormGroup
 
   ngOnInit(): void {
     this.actService.getActs().subscribe( data => this.lesactivitees = data);
     this.resService.getMembers().subscribe(data => this.lesresponsables=data);
-
+   this.ajoutGroupAct = this.formBuilder.group(
+      {
+        id: [],
+        int :[''],
+        photo:[''],
+        date:[''],
+        lieu:[''],
+        prix:[],
+        categorie:['formation'],
+        limite:[]
+  
+      }
+    )
    
   }
 
