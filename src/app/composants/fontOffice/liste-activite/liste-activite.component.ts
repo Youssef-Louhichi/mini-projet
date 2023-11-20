@@ -1,5 +1,5 @@
 import { Component ,OnInit} from '@angular/core';
-import { Router } from '@angular/router';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Activity } from 'src/app/classes/activity';
 import { ActivitiesService } from 'src/app/services/activities.service';
 import { AdminService } from 'src/app/services/admin.service';
@@ -14,6 +14,8 @@ export class ListeActiviteComponent implements OnInit {
   activities: Activity[];
   activitiesAfficher: Activity[];
   user: string
+  Filtre:FormGroup
+
 
   ngOnInit(): void {
     this.activityservice.getActs().subscribe( data => {this.activities = data
@@ -22,38 +24,40 @@ export class ListeActiviteComponent implements OnInit {
       );
       this.adService.getAdmin().subscribe(data => this.user=data.username)
 
-  }
-  find(id: string) {
-    if (id != ""){
-      this.activitiesAfficher = this.activities.filter(e => e.id == Number(id))
-    }
-    else
-      this.activitiesAfficher = this.activities;
+       this.Filtre = new FormGroup ({
+
+        cat: new FormControl(""),
+        date: new FormControl("")
+      })
+      
 
   }
-
-
-  filtre1(cat: string) {
+  
+  filtre1() {
+    let cat = this.Filtre.get("cat").value;
     if (cat != "")
-      this.activitiesAfficher = this.activities.filter(e => e.categorie == cat)
-    else
+      this.activitiesAfficher = this.activitiesAfficher.filter(e => e.categorie == cat)
+    else{
       this.activitiesAfficher = this.activities;
+      this.filtre2()}
 
   }
 
-
-  trier(i: number) {
-    if (i == 1) {
-      this.activitiesAfficher.sort((a, b) => (a.id > b.id ? 1 : -1))
+  filtre2() {
+    let date = this.Filtre.get("date").value;
+    if (date != "")
+      this.activitiesAfficher = this.activitiesAfficher.filter(e => e.date_act >= date)
+    else{
+       this.activitiesAfficher = this.activities;
+      this.filtre1()
     }
 
-    if (i == 2) {
-      this.activitiesAfficher.sort((a, b) => (a.int > b.int ? 1 : -1))
-    }
-
-    if (i == 3) {
-      this.activitiesAfficher.sort((a, b) => (a.date_act > b.date_act ? 1 : -1))
-    }
   }
+
+  reset(){
+    this.Filtre.reset({cat:[""]})
+    this.activitiesAfficher = this.activities;
+  }
+
 
 }

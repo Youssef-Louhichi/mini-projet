@@ -24,6 +24,7 @@ import { ChangerUserNameComponent } from './composants/backOffice/changer-user-n
 import { AjouterMembreComponent } from './composants/backOffice/ajouter-membre/ajouter-membre.component';
 import { AjouterSuggestionComponent } from './composants/fontOffice/ajouter-suggestion/ajouter-suggestion.component';
 import { ConsulterMembreComponent } from './composants/backOffice/consulter-membre/consulter-membre.component';
+import { NumtelPipe } from './numtel.pipe';
 
 
 @NgModule({
@@ -49,6 +50,7 @@ import { ConsulterMembreComponent } from './composants/backOffice/consulter-memb
     AjouterMembreComponent,
     AjouterSuggestionComponent,
     ConsulterMembreComponent,
+    NumtelPipe,
  
   ],
   imports: [
