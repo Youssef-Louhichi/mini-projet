@@ -1,14 +1,31 @@
 <h1>Vous pouvez nous envoyer vos suggestion a travers ce formulaire !</h1>
 
-
-<form [formGroup]="sugges" class="form-horizontal">
-<label class="control-label col-sm-2">vous etes :</label>
-<input type="text" placeholder="nom et prenom" formControlName="nom" class="form-control" placeholder="flen el fouleni">
-<label class="control-label col-sm-2" for="email">votre adresse mail :</label>
-<input type="email" placeholder="adresse email" formControlName="mail" class="form-control" placeholder="xxxxx@mailcom">
+<div class="container">
+<form [formGroup]="sugges" class="row g-2">
+    <div class="col-md-6">
+<label >vous etes :</label>
+<input type="text" placeholder="nom et prenom" formControlName="nom"class="form-control form-control-sm" placeholder="flen el fouleni">
+<div *ngIf="isValidP2()" class="alert alert-warning">
+  Votre nom svp ):
+</div>
+</div>
+<div class="col-md-6">
+<label for="email">votre adresse mail :</label>
+<input type="email" placeholder="adresse email" formControlName="mail" class="form-control form-control-sm" placeholder="xxxxx@mailcom">
+<div *ngIf="isValidP()" class="alert alert-warning">
+    ce champ est obligatiore !
+</div>
+</div>
+<div class="col-md-12">
 <label>votre suggestion :</label>
-<textarea cols="30" rows="10" placeholder="votre suggestion" formControlName="sugg" class="form-control" placeholder="votre message"></textarea>
+<textarea cols="80" rows="4" placeholder="votre suggestion" formControlName="sugg" class="form-control form-control-sm" placeholder="votre message"></textarea>
+<div *ngIf="isValidP3()" class="alert alert-warning">
+   Pas de message ),:
+</div>
 
+</div>
 
-<input type="button" value="envoyer" (click)="send()" class="btn btn-primary">
+<input type="button" value="envoyer" (click)="send()" class="btn btn-primary" [disabled]="sugges.invalid">
+<input type="button" class="btn btn-secondary" value="Effacer" (click)="onResetForm()">
 </form>
+</div>

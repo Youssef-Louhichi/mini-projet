@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Activity } from 'src/app/classes/activity';
 import { MembreResponsable } from 'src/app/classes/membre-responsable';
@@ -29,9 +29,9 @@ export class AjouterMembreComponent implements OnInit {
     this.actservice.getActs().subscribe(data => this.lesactivitees=data)
     this.ajoutGroupMem= this.formBuilder.group(
       {
-        nom: [''],
-        prenom :[''],
-        tel:['']
+        nom: ['',Validators.required],
+        prenom :['',Validators.required],
+        tel:['',Validators.required]
   
       }
     )
@@ -79,4 +79,37 @@ export class AjouterMembreComponent implements OnInit {
     }
   }
 
+  public get nom()
+  {
+    return this.ajoutGroupMem.get("nom");
+  }
+  
+  
+  public get prenom()
+  {
+    return this.ajoutGroupMem.get("prenom");
+  }
+  public get tel()
+  {
+    return this.ajoutGroupMem.get("tel");
+  }
+  
+
+  isValidP2()
+  {
+    return this.nom?.errors?.['required'] && this.nom?.touched;
+  }
+
+
+  isValidP()
+  {
+    return this.prenom?.errors?.['required'] && this.prenom?.touched;
+  }
+
+
+  
+  isValidP3()
+  {
+    return this.tel?.errors?.['required'] && this.tel?.touched;
+  }
 }

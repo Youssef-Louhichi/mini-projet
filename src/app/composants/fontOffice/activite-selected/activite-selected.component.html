@@ -1,19 +1,20 @@
-<div class="card">
+<div class="container">
+<div class="card row gx-9" >
+
+  <img  [src]="act.photo" alt="Card image">
     <div class="card-body">
-    <label>identifiant :</label><h4 class="card-title">{{act.id}}</h4>
-    <div class="card-header">
-     <label>intitule :</label> <p class="card-text">{{act.int}}</p>
-    </div>
+    <h4 class="card-title">{{act.int}}</h4>
      <label>date :</label><p class="card-text">{{act.date_act|date:'longDate'}}</p>
      <label>categorie :</label><p class="card-text">{{act.categorie}}</p>
+     <label>identifiant :</label><h4 class="card-title">{{act.id}}</h4>
      <div class="card-footer">
      <label><span *ngIf="act.prix != 0 ; else gratuit" class="badge rounded-pill  bg-dark">
       <i class="fa-solid fa-coins"></i>prix :{{act.prix}}DT</span><ng-template
           #gratuit >Gratuit</ng-template></label>
      </div>
+     <button routerLink="/home" class="btn btn-primary col-md-12" >Retour</button>
     </div>
-    
   </div>
 
 
-  <button routerLink="/home" class="btn btn-primary">Retour</button>
+</div>

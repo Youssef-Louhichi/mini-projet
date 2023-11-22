@@ -1,0 +1,11 @@
+img {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    left: 30%;
+}
+.container{
+    width: 500px;
+}
+.card{background-color:whitesmoke;}
+
