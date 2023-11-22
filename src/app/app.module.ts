@@ -25,6 +25,9 @@ import { AjouterMembreComponent } from './composants/backOffice/ajouter-membre/a
 import { AjouterSuggestionComponent } from './composants/fontOffice/ajouter-suggestion/ajouter-suggestion.component';
 import { ConsulterMembreComponent } from './composants/backOffice/consulter-membre/consulter-membre.component';
 import { NumtelPipe } from './numtel.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 @NgModule({
@@ -51,6 +54,7 @@ import { NumtelPipe } from './numtel.pipe';
     AjouterSuggestionComponent,
     ConsulterMembreComponent,
     NumtelPipe,
+    
  
   ],
   imports: [
@@ -58,7 +62,10 @@ import { NumtelPipe } from './numtel.pipe';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatFormFieldModule
 
   ],
   providers: [],

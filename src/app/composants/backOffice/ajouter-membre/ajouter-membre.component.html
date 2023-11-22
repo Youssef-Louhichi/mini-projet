@@ -7,19 +7,28 @@
                     <label>Nom:</label>
                     <input type="text" class="form-control form-control-sm"
                         (change)="test()" formControlName="nom">
+                        <div *ngIf="isValidP2()" class="alert alert-warning">
+                            ce champ est obligatiore !
+                        </div>
                 </div>
                 <div class="col-md-6">
                     <label>Prenom:</label>
                     <input type="text" class="form-control form-control-sm"
                         (change)="test()" formControlName="prenom">
+                        <div *ngIf="isValidP()" class="alert alert-warning">
+                            ce champ est obligatiore !
+                        </div>
                 </div>
                 <div class="col-md-6">
                     <label>Numero telephone:</label>
                     <input type="text" class="form-control form-control-sm" 
                         (change)="test()" formControlName="tel">
+                        <div *ngIf="isValidP3()" class="alert alert-warning">
+                            ce champ est obligatiore !
+                        </div>
                 </div>
                 <button class="btn btn-primary" id="butt" disabled
-(click)="onAjoute()">Ajouter</button>
+(click)="onAjoute()" [disabled]="ajoutGroupMem.invalid">Ajouter</button>
     </form>
 </div>
 </section>

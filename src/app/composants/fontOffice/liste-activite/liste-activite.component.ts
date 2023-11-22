@@ -33,26 +33,20 @@ export class ListeActiviteComponent implements OnInit {
 
   }
   
-  filtre1() {
+  filtre() {
     let cat = this.Filtre.get("cat").value;
+    let date = this.Filtre.get("date").value;
+    this.activitiesAfficher = this.activities;
     if (cat != "")
       this.activitiesAfficher = this.activitiesAfficher.filter(e => e.categorie == cat)
-    else{
-      this.activitiesAfficher = this.activities;
-      this.filtre2()}
 
-  }
-
-  filtre2() {
-    let date = this.Filtre.get("date").value;
-    if (date != "")
+      if (date != "")
       this.activitiesAfficher = this.activitiesAfficher.filter(e => e.date_act >= date)
-    else{
-       this.activitiesAfficher = this.activities;
-      this.filtre1()
-    }
+   
 
   }
+
+ 
 
   reset(){
     this.Filtre.reset({cat:[""]})

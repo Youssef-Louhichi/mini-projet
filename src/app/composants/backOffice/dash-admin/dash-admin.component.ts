@@ -12,6 +12,6 @@ export class DashAdminComponent {
   constructor(private router:Router,private auth:AuthService){}
   logout(){
     this.auth.logout()
-    this.router.navigate(['/login'])
+    this.router.navigate(['/home'])
   }
 }

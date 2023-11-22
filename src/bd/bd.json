@@ -32,11 +32,11 @@
     },
     {
       "id": 7,
-      "int": "Special Guest",
+      "int": "Special Guest ",
       "photo": "assets/activity.png",
-      "date_act": "2023/12/23",
+      "date_act": "2023-12-24T00:00:00.000Z",
       "categorie": "event",
-      "lieu": "Local Iset",
+      "lieu": "Local Iset ",
       "responsables": [
         {
           "prenom": "Youssef",
@@ -178,42 +178,42 @@
       "prenom": "Youssef",
       "nom": "Ben farah",
       "tel": "12345678",
-      "id": 1
+      "id": 0
     },
     {
       "prenom": "Youssef",
       "nom": "Louhichi",
       "tel": "21287173",
-      "id": 2
+      "id": 1
     },
     {
       "prenom": "Aziz",
       "nom": "Ben Mimoun",
       "tel": "12345678",
-      "id": 3
+      "id": 2
     }
   ],
   "suggestions": [
     {
-      "id": "0",
       "nom": "3ammar",
       "mail": "3ammar0@gmail.com",
-      "sugg": "J'espere que vous organisez Watch party pour les film de marvel et dc",
-      "date_post": "2023-11-5"
+      "sugg": "Loving your club and site!",
+      "date_post": "2023-11-05T16:41:43.422Z",
+      "id": 0
     },
     {
-      "id": "1",
       "nom": "3ammar",
       "mail": "3ammar0@gmail.com",
       "sugg": "J'espere que vous organisez Watch party pour les film de marvel et dc",
-      "date_post": "2023-11-12"
+      "date_post": "2023-11-10T16:41:43.422Z",
+      "id": 1
     },
     {
-      "id": "2",
       "nom": "3ammar",
       "mail": "3ammar0@gmail.com",
-      "sugg": "J'espere que vous organisez Watch party pour les film de marvel et dc",
-      "date_post": "2023-11-25"
+      "sugg": "J'espere que vous organisez Watch party pour les film de disney",
+      "date_post": "2023-11-20T16:41:43.422Z",
+      "id": 2
     }
   ],
   "admin": {

@@ -1,0 +1,7 @@
+input.ng-valid {border-left: 3px solid green;}
+input.ng-invalid{border-left: 3px solid red;}
+textarea.ng-valid {border-left: 3px solid green;}
+textarea.ng-invalid{border-left: 3px solid red;}
+
+
+h1{text-align: center;}

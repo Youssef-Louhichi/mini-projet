@@ -1,11 +1,11 @@
 <div class="container mt-3">
     <h1 style="font-size: 70px;margin-left:70px;"><i class="fa-solid fa-film"></i> Consultez Nos Activitées <i class="fa-solid fa-film"></i></h1>
-    <form action="" [formGroup]="Filtre" class="row g-3" style="margin-top: 25px;">
+    <form action="" [formGroup]="Filtre" class="row g-3" style="margin-top: 25px;margin-left:200px;" >
         <h3>Filtrer:</h3>
 
         <div class="col-md-4">
 
-            <select (change)="filtre1()" class="form-select" formControlName="cat">
+            <select (change)="filtre()" class="form-select" formControlName="cat" >
                 <option value="formation">Formation</option>
                 <option value="event">Evennement</option>
                 <option value="sortie">Sortie</option>
@@ -15,11 +15,11 @@
 
         <div class="col-md-4">
 
-            <input type="date" class="form-control " formControlName="date" (change)="filtre2()">
+            <input type="date" class="form-control " formControlName="date" (change)="filtre()">
         </div>
         <div class="col-md-4">
 
-            <button type="reset" class="btn btn-secondary" (click)="reset()" ><i class="fa-solid fa-arrow-rotate-left"></i></button>
+            <button type="reset" class="btn btn-secondary" (click)="reset()" mat-button><i class="fa-solid fa-arrow-rotate-left"></i></button>
         </div>
     </form>
 

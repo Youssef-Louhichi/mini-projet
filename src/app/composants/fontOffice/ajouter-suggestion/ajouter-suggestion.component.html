@@ -1,14 +1,35 @@
+<section class="py-3 py-md-5 py-xl-8">
+
+<div class="container">
+
 <h1>Vous pouvez nous envoyer vos suggestion a travers ce formulaire !</h1>
 
+<form [formGroup]="sugges" class="row g-2" >
+    <div class="col-md-6">
+<label >Vous etes :</label>
+<input  type="text" placeholder="nom et prenom" formControlName="nom"class="form-control form-control-sm" placeholder="flen el fouleni">
+<div *ngIf="isValidP2()" class="alert alert-warning">
+  Votre nom svp ):
+</div>
+</div>
+<div class="col-md-6">
+<label for="email">votre adresse mail :</label>
+<input  type="email" placeholder="adresse email" formControlName="mail" class="form-control form-control-sm" placeholder="xxxxx@mailcom">
+<div *ngIf="isValidP()" class="alert alert-warning">
+    ce champ est obligatiore !
+</div>
+</div>
+<div class="col-md-12">
+<label>Votre suggestion :</label>
+<textarea cols="80" rows="4" placeholder="votre suggestion" formControlName="sugg" class="form-control form-control-sm" placeholder="votre message"></textarea>
+<div *ngIf="isValidP3()" class="alert alert-warning">
+   Pas de message ),:
+</div>
 
-<form [formGroup]="sugges" class="form-horizontal">
-<label class="control-label col-sm-2">vous etes :</label>
-<input type="text" placeholder="nom et prenom" formControlName="nom" class="form-control" placeholder="flen el fouleni">
-<label class="control-label col-sm-2" for="email">votre adresse mail :</label>
-<input type="email" placeholder="adresse email" formControlName="mail" class="form-control" placeholder="xxxxx@mailcom">
-<label>votre suggestion :</label>
-<textarea cols="30" rows="10" placeholder="votre suggestion" formControlName="sugg" class="form-control" placeholder="votre message"></textarea>
+</div>
 
-
-<input type="button" value="envoyer" (click)="send()" class="btn btn-primary">
+<input type="button" value="Envoyer" (click)="send()" class="btn btn-success" [disabled]="sugges.invalid" >
+<input type="button" class="btn btn-secondary" value="Effacer" (click)="onResetForm()" mat-button>
 </form>
+</div>
+</section>

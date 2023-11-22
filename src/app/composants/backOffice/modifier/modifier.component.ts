@@ -68,12 +68,12 @@ export class ModifierComponent implements OnInit {
 
   test() {
 
-    let id =this.modifierForm.get('id').value;
+    
     let int =this.modifierForm.get('int').value;
     let lieu =this.modifierForm.get('lieu').value;
     let date =this.modifierForm.get('date').value;
 
-    if (id == "" || int == "" || date == "" || lieu == "") {
+    if ( int == "" || date == "" || lieu == "") {
       document.getElementById("butt").setAttribute("disabled", "true")
     }
     else {
@@ -93,8 +93,9 @@ export class ModifierComponent implements OnInit {
     let lieu =this.modifierForm.get('lieu').value;
     let lim =this.modifierForm.get('limite').value;
 
-    if (this.lesactivities.find(e => e.id == Number(id)) == this.act ||
-      !this.lesactivities.find(e => e.id == Number(id))) {
+    
+
+        
 
       if (ph =="") {
         ph = "assets/activity.png"
@@ -103,7 +104,6 @@ export class ModifierComponent implements OnInit {
         ph = "assets\\" + ph.split("\\")[2];
       }
 
-      this.act.id = Number(id);
       this.act.int = int;
       this.act.date_act = new Date(date);
       this.act.photo = ph;
@@ -117,10 +117,7 @@ export class ModifierComponent implements OnInit {
 
       this.service.modifierService(Number(id), this.act).subscribe()
       this.route.navigate(['/admin/acts'])
-    }
-    else {
-      alert("Id existe déjà pour une autre activitée.")
-    }
+    
 
   }
 

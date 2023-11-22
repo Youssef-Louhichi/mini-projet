@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Suggestion } from 'src/app/classes/suggestion';
 import { SuggestionsService } from 'src/app/services/suggestions.service';
 
@@ -15,14 +15,30 @@ export class AjouterSuggestionComponent implements OnInit{
 
 sugges:FormGroup = new FormGroup ({
 
-  nom: new FormControl(""),
-  mail: new FormControl(""),
-  sugg : new FormControl(""),
+  nom: new FormControl("",Validators.required),
+  mail: new FormControl("",Validators.required),
+  sugg : new FormControl("",Validators.required),
   date:new FormControl("")
 })
 
 ngOnInit(): void {
   
+}
+
+
+public get nom()
+{
+  return this.sugges.get("nom");
+}
+
+
+public get mail()
+{
+  return this.sugges.get("mail");
+}
+public get sugg()
+{
+  return this.sugges.get("sugg");
 }
 
 constructor(private ser:SuggestionsService){}
@@ -37,6 +53,34 @@ send()
 
   this.newsugg = new Suggestion(nom,mail,sugg,date);
 
-this.ser.ajouter(this.newsugg).subscribe()
+this.ser.ajouter(this.newsugg).subscribe();
+
+alert("votre suggestion a été envoyé avec succes !");
+this.sugges.reset();
 }
+
+
+onResetForm(){
+  this.sugges.reset();
+
+}
+
+
+isValidP2()
+  {
+    return this.nom?.errors?.['required'] && this.nom?.touched;
+  }
+
+
+  isValidP()
+  {
+    return this.mail?.errors?.['required'] && this.mail?.touched;
+  }
+
+
+  
+  isValidP3()
+  {
+    return this.sugg?.errors?.['required'] && this.sugg?.touched;
+  }
 }

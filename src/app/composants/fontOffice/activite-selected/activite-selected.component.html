@@ -1,16 +1,16 @@
 <a routerLink="/home" class="btn btn-light"> <i class="fa-solid fa-arrow-left fa-xl"></i> </a>
 <section class="py-3 py-md-5 py-xl-8">
-  <div class="container">
+  <div class="container mt-4 d-block">
 
-    <div class="card ">
-      <div class="card-header text-center">
-        <h1 class="card-text">{{act.int}}</h1>
+    <div class="card w-75" style="margin-left: 120px;">
+      <div [ngClass]="{'card-header':true, 'text-center':true, 'bg-success':act.prix==0}">
+        <h1 [ngClass]="{'card-text':true,'free-title':act.prix==0}">{{act.int}}</h1>
       </div>
       <div class="card-body ">
         <div class="text-center">
           <img [src]="act.photo" class="rounded-circle">
         </div>
-        <div>
+        <div >
           <h4>Identifiant :</h4>
           <h4 class="card-title">{{act.id}}</h4>
           <h4>Date :</h4>
@@ -18,25 +18,27 @@
           <h4>Categorie :</h4>
           <p class="card-text">{{act.categorie | titlecase}}</p>
           <h4>Lieu :</h4><p class="card-text">{{act.lieu | titlecase}}</p>
+
+          <br>
         
             <div *ngIf="act.prix != 0 ; else gratuit">
               <h4>Prix :</h4>
               <i class="fa-solid fa-coins"></i><strong>{{act.prix}}DT</strong>
             </div>
-            <ng-template #gratuit> <strong>Gratuit</strong></ng-template>
-          
-
-          <div *ngIf="act.limite">
+            
+            <ng-template #gratuit> <strong>Cette activité est <span  style="color: green;">Gratuit</span></strong></ng-template>
+            <br>
+          <ng-container *ngIf="act.limite">
             Le nombre de participants à cette activité est limitéé, vous devez contacter nos membres responsables pour
             participer à cette activité
             et avoir plus d'informations:
             <ul>
-              <li *ngFor="let res of act.responsables">
+              <li *ngFor="let res of act.responsables" style="list-style: none;">
                 {{res.nom | uppercase}} {{res.prenom | titlecase}} Télephone: {{res.tel | numtel}}
               </li>
             </ul>
 
-          </div>
+          </ng-container>
         </div>
       </div>
       <div class="card-footer">
