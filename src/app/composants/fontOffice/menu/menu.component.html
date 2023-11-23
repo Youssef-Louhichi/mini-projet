@@ -1,24 +1,24 @@
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-secondary fixed-top" >
+<nav class="navbar navbar-expand-lg navbar-dark bg-warning fixed-top" >
   <div class="container-fluid ">
     <img src="assets/logo.png" style="width: 200px;">
     <ul class="navbar-nav mb-2 mb-lg-0 mx-auto">
       <li class="nav-item">
-        <a routerLinkActive="active" class="nav-link" routerLink="/home"><i class="fa-solid fa-house fa-xl"></i> Home</a>
+        <a routerLinkActive="active" class="nav-link link-dark" routerLink="/home"><i class="fa-solid fa-house fa-xl"></i> Home</a>
 
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/pub" routerLinkActive="active">Movies</a>
+        <a class="nav-link link-dark" routerLink="/pub" routerLinkActive="active">Movies</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/sug" routerLinkActive="active">Suggestion</a>
+        <a class="nav-link link-dark" routerLink="/sug" routerLinkActive="active">Suggestion</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/aboutus" routerLinkActive="active">About Us</a>
+        <a class="nav-link link-dark" routerLink="/aboutus" routerLinkActive="active">About Us</a>
       </li>
 
     </ul>
-    <button class="btn btn-light" type="button" (click)="goLogin()" mat-button>Espace Admin</button>
+    <button class="btn btn-light rounded-pill" type="button" (click)="goLogin()" mat-button>Espace Admin</button>
   </div>
 
 </nav>

@@ -11,7 +11,8 @@
     </div>
     <div class="card-body">
       <h4 class="card-title">{{li.int|titlecase}}</h4>
-      <p class="card-text">{{li.lieu|titlecase}}</p>
-      <a [routerLink]="['/act',li.id]" routerLinkActive="active" class="btn btn-primary">Details</a>
+      <p class="card-text">{{li.categorie|titlecase}}</p>
+      <p class="card-text">Le : {{li.date_act|date:'dd/MM/yyyy'}}</p>
+      <a [routerLink]="['/act',li.id]" routerLinkActive="active" class="btn btn-warning">Details</a>
     </div>
   </div>
