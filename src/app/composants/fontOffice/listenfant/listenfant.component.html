@@ -1,18 +1,11 @@
-
-
-
-
-
-
-
 <div class="card w-100" style="width:400px">
-  <div class="card-head">
-    <img class="card-img-top" [src]="li.photo" alt="Card image">
-    </div>
-    <div class="card-body">
-      <h4 class="card-title">{{li.int|titlecase}}</h4>
-      <p class="card-text">{{li.categorie|titlecase}}</p>
-      <p class="card-text">Le : {{li.date_act|date:'dd/MM/yyyy'}}</p>
-      <a [routerLink]="['/act',li.id]" routerLinkActive="active" class="btn btn-warning">Details</a>
-    </div>
+  <div class="card-head text-center" >
+    <img class="card-img-top w-100" [src]="li.photo" alt="Card image" style="height: 250px;">
   </div>
+  <div class="card-body">
+    <h4 class="card-title">{{li.int}}</h4>
+    <p class="card-text">{{li.categorie|titlecase}}</p>
+    <p class="card-text">Le : {{li.date_act|date:'dd/MM/yyyy'}}</p>
+    <a [routerLink]="['/act',li.id]" routerLinkActive="active" class="btn btn-warning">Details</a>
+  </div>
+</div>

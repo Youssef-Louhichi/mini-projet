@@ -3,7 +3,7 @@
     {
       "id": 4,
       "int": "Formation Montage",
-      "photo": "assets/activity.png",
+      "photo": "assets/montage.jpg",
       "date_act": "2023-11-29T00:00:00.000Z",
       "categorie": "formation",
       "lieu": "Local Iset",
@@ -33,7 +33,7 @@
     {
       "id": 7,
       "int": "Special Guest ",
-      "photo": "assets/activity.png",
+      "photo": "assets/guest.jpg",
       "date_act": "2023-12-24T00:00:00.000Z",
       "categorie": "event",
       "lieu": "Local Iset ",
@@ -62,8 +62,8 @@
     },
     {
       "id": 9,
-      "int": "Watch Party",
-      "photo": "assets/activity.png",
+      "int": "Watch Party:Tarantino movies",
+      "photo": "assets/tarantino.jpg",
       "date_act": "2023-12-13T00:00:00.000Z",
       "categorie": "event",
       "lieu": "Local Iset",
@@ -115,7 +115,7 @@
     {
       "id": 3,
       "int": "Partie cinema:Alien Wars",
-      "photo": "assets/activity.png",
+      "photo": "assets/film.jpg",
       "date_act": "2023-12-07T00:00:00.000Z",
       "categorie": "sortie",
       "lieu": "SALLE:Cine jamil",
@@ -144,8 +144,8 @@
     },
     {
       "id": 22,
-      "int": "formation lumiére",
-      "photo": "assets/activity.png",
+      "int": "Formation Son",
+      "photo": "assets/son.jpg",
       "date_act": "2023-11-09T00:00:00.000Z",
       "categorie": "formation",
       "lieu": "local iset",

@@ -48,7 +48,7 @@ export class AjouterMembreComponent implements OnInit {
 
 
       
-      this.newResponsable = new MembreResponsable(nom,prenom,tel)
+      this.newResponsable = new MembreResponsable(prenom,nom,tel)
       this.resService.ajouter(this.newResponsable).subscribe()
       this.lesactivitees.forEach(e=>{
         if(e.limite){
