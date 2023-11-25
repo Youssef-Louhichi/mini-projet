@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class PubComponent implements OnInit {
   ngOnInit(): void {
 
-/*
+
     const url = 'https://imdb-top-100-movies1.p.rapidapi.com/';
     const options = {
       method: 'GET',
@@ -79,7 +79,7 @@ export class PubComponent implements OnInit {
         document.getElementById("carContainerUp").innerHTML = car;
       })
 
-*/
+
 
   }
 

@@ -30,6 +30,8 @@ export class ListAcitiviteAdminComponent implements OnInit {
   
 
   supprimer(id:number,i:number) {
+
+    if(confirm(`Est-ce que vous étes sur que vous voulez supprimer l'activité de l'id ${id}`)){
     this.activityservice.supprimerAct(id).subscribe();
 
     this.activitiesAfficher.splice(i,1)
@@ -39,6 +41,7 @@ export class ListAcitiviteAdminComponent implements OnInit {
         break;
     }
     this.activities.splice(i,1)
+  }
   }
 
   
