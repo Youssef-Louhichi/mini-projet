@@ -21,7 +21,7 @@ export class BoiteComponent implements OnInit{
   }
 
   supprimer(id:number,i:number){
-    if(confirm(`Est-ce que vous étes sur que vous voulez supprimer cette suggestion`)){
+    if(confirm(`Est-ce que vous étes sur que vous voulez supprimer cette suggestion?`)){
 
     this.sugService.supprimer(id).subscribe()
     this.lessuggestions.splice(i,1)

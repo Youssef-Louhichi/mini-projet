@@ -35,6 +35,8 @@ export class ConsulterMembreComponent implements OnInit{
   }
 
   supprimer(id:number,i:number) {
+    if(confirm(`Est-ce que vous étes sur que vous voulez supprimer ce membre?`)){
+
     this.serviceMembre.supprimerRes(id).subscribe();
 
     this.lesresponsables.splice(i,1)
@@ -45,6 +47,7 @@ export class ConsulterMembreComponent implements OnInit{
       this.actservice.modifierService(e.id,e).subscribe()}
 
     })
+  }
 
   }
 
